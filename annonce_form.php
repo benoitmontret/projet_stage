@@ -3,7 +3,7 @@
 include("header.php");
 ?>
 <head>
-<script src="./assets/script.js" defer></script>
+<script src="./assets/annonce.js" defer></script>
 </head>
 
 <h2>titre de la page 1</h2>
@@ -38,15 +38,13 @@ $stmt = $db->query($sql);
             maxlength="255" minlength="2" placeholder="Donnez un titre ou une description courte pour l'annonce" autofocus = true required = "required">
             <br><br>
         <label for="description">Details :</label><br>
-        <textarea name="description" id="description" cols="150" rows="5" placeholder="Entrez les détails de l'annonce ici"></textarea>
-            <!-- <input type="text" name="description" id="description" size="100"
-            placeholder="Entrez les détails de l'événement ici" > -->
+        <textarea name="description" id="description" cols="150" rows="5" placeholder="Entrez les détails de l'annonce ici" required = "required"></textarea>
             <br><br>
         <label for="date_start">Date de début* :</label>
             <input type="date" name="date_start" id="date_start" required = "required" />
         <label for="date_end">Date de fin :</label>
             <input type="date" name="date_end" id="date_end" />
-            <p class="context_fin">S'il n'y a pas de date de fin de définit, elle sera fixé à la même date que celle du début.</p>
+            <p class="context_fin">S'il n'y a pas de date de fin de définit, elle sera fixée à la même date que celle du début.</p>
 
         
         <br><br>
