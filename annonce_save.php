@@ -25,9 +25,14 @@ $sql='insert into annonce (titre,description,groupe,date_debut,date_fin) values 
     $req->bindvalue(3,$Groupe,PDO::PARAM_STR);
     $req->bindvalue(4,$date_start,PDO::PARAM_STR);
     $req->bindvalue(5,$date_end,PDO::PARAM_STR);
-    $req->execute();
+    // $req->execute();
 
+    if ($req->execute()) {
+        echo "<p>Annonce ajoutée avec succès !</p>";
+        } else {
 
+        echo "<p>Échec</p>";
+        }
 
 ?>
 </body>
