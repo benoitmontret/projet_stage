@@ -1,4 +1,12 @@
+body {
+    font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+}
 .logo {
     height : 100px;
     width: auto;
+}
+.banner {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
 }
