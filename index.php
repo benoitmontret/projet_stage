@@ -8,7 +8,8 @@ include("header.php");
 
 <!-- pour les test  --> 
 <?php
-$userGroup = "Accueil";
+// $userGroup = "Accueil";
+$userGroup = $_POST['valeurLocalStorage'];
 ?> 
 
 <?php

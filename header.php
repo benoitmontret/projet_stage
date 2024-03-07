@@ -15,7 +15,22 @@
         <nav></nav>
         <div class="banner">
             <img class="logo" src="./assets/img/logosp.png " alt="">
-            <h2 class="userLogin" id="userGroup">GROUP</h2>
+            <h2 class="userGroup" id="userGroup">GROUP</h2>
         </div>
     </header>
     
+<form id="formulaireLocalStorage" action="" method="post">
+  <input type="" name="valeurLocalStorage" id="valeurLocalStorage" />
+  <!-- <input type="submit" value="Envoyer" /> -->
+</form>
+
+<script>
+// Définir la valeur dans localStorage
+// localStorage.setItem("valeur", "valeurDeLocalStorage");
+
+// Remplir le champ caché avec la valeur de localStorage
+// document.getElementById("valeurLocalStorage").value = localStorage.getItem("userGroup");
+
+// Déclencher l'envoi du formulaire
+// document.getElementById("formulaire").submit();
+</script>
