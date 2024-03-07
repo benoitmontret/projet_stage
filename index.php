@@ -6,10 +6,12 @@ include("header.php");
 <p>hello !</p> 
 <a href="annonce_form.php">ajout annonce</a><br>
 
-<!-- pour les test  --> 
+
 <?php
-// $userGroup = "Accueil";
-$userGroup = $_POST['valeurLocalStorage'];
+// $userGroup = "Accueil"; <!-- pour les test  --> 
+
+    $userGroup = $_SESSION['userGroup'];
+
 ?> 
 
 <?php

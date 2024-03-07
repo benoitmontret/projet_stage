@@ -1,3 +1,11 @@
+<?php
+    //On démarre une nouvelle session
+    session_start();
+    
+    //On définit une variable par defaut pour le 1er chargement de la page
+    $_SESSION['userGroup'] = 'Accueil'; // à changer pour général quand il sera dans la bd
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,11 +15,11 @@
     <link rel="icon" type="image/png" href="./assets/img/logosp.png">
     <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
     <script src="./assets/main.js" defer></script>
-
+    
 </head>
 
 <body>
-<header>
+    <header>
         <nav></nav>
         <div class="banner">
             <img class="logo" src="./assets/img/logosp.png " alt="">
@@ -19,10 +27,10 @@
         </div>
     </header>
     
-<form id="formulaireLocalStorage" action="" method="post">
-  <input type="" name="valeurLocalStorage" id="valeurLocalStorage" />
-  <!-- <input type="submit" value="Envoyer" /> -->
-</form>
+    <form id="formulaireLocalStorage" action="" method="post">
+        <input type="" name="valeurLocalStorage" id="valeurLocalStorage" />
+        <input type="submit" value="Envoyer" />
+    </form>
 
 <script>
 // Définir la valeur dans localStorage
