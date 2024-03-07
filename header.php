@@ -15,7 +15,7 @@
         <nav></nav>
         <div class="banner">
             <img class="logo" src="./assets/img/logosp.png " alt="">
-            <h2 class="userLogin" id="userLogin">GROUP</h2>
+            <h2 class="userLogin" id="userGroup">GROUP</h2>
         </div>
     </header>
     

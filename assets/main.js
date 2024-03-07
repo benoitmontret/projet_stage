@@ -1,24 +1,34 @@
 var userLogin = document.querySelector('#userLogin');
-// var groupListe = document.querySelector('#groupListe');
+
+// localStorage.removeItem('userGroup')
+console.log(localStorage.getItem('userGroup'))
+
+//   localStorage.getItem('userGroup')
 
 
+if (!localStorage.getItem('userGroup')) {
+    localStorage.setItem('userGroup', 'Acceuil');
+    
+}
+console.log(localStorage.getItem('userGroup'))
 
 
-// function saveStorage() {
-//     localStorage.setItem('userLogin', )
-// }
-
-function changeUser() {
-    userLogin.value = groupListe.value;
+function maj() {
+    changeUserGroup();
+    saveStorage();
 }
 
-// groupListe.onchange = changeUser();
-groupListe.addEventListener("change", (event) => {
-    // console.log(userLogin.textContent);
-    // console.log(userLogin.innerHTML);
-    // console.log(userLogin.innerText);
-    console.log(document.getElementById('groupListe').selectedIndex);
-    console.log(document.groupListe.selectedIndex);
-    // changeUser();
-
-    });
+function saveStorage() {
+    localStorage.setItem('userGroup', selectGroup())
+}
+function changeUserGroup() {
+    document.querySelector('#userGroup').innerText = selectGroup();
+}
+function selectGroup() {
+    var select = document.querySelector("#groupListe");
+    var valeur = select.options[select.selectedIndex].value;
+    return valeur;
+}
+function getGroup() {
+    return localStorage.getItem('userGroup');
+}
