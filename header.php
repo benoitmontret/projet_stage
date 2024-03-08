@@ -1,11 +1,3 @@
-<?php
-    //On démarre une nouvelle session
-    session_start();
-    
-    //On définit une variable par defaut pour le 1er chargement de la page
-    $_SESSION['userGroup'] = 'Accueil'; // à changer pour général quand il sera dans la bd
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,23 +14,11 @@
     <header>
         <nav></nav>
         <div class="banner">
-            <img class="logo" src="./assets/img/logosp.png " alt="">
+            <a href="index.php">
+                <img class="logo" src="./assets/img/logosp.png " alt="">
+            </a>
+
             <h2 class="userGroup" id="userGroup">GROUP</h2>
         </div>
     </header>
-    
-    <form id="formulaireLocalStorage" action="" method="post">
-        <input type="" name="valeurLocalStorage" id="valeurLocalStorage" />
-        <input type="submit" value="Envoyer" />
-    </form>
 
-<script>
-// Définir la valeur dans localStorage
-// localStorage.setItem("valeur", "valeurDeLocalStorage");
-
-// Remplir le champ caché avec la valeur de localStorage
-// document.getElementById("valeurLocalStorage").value = localStorage.getItem("userGroup");
-
-// Déclencher l'envoi du formulaire
-// document.getElementById("formulaire").submit();
-</script>

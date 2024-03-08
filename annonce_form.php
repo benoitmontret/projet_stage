@@ -1,5 +1,5 @@
-<!-- herder.php contient l'ouverture du fichier html (!DOCTYPE balise head-body...) -->
 <?php
+session_start();
 include("header.php");
 ?>
 <head>
@@ -8,12 +8,12 @@ include("header.php");
 
 <h2>titre de la page 1</h2>
 
-<!-- pour les test  -->
+
 <?php
-$user = "Compta";
+// $user = "Compta"; //pour les test
+$userGroup = $_COOKIE['userGroup'];
 ?>
 
-<body>
 
 <?php
 // Récupération de la liste des groupes dans la base de donnée
@@ -28,7 +28,7 @@ $stmt = $db->query($sql);
             <option value="">-- Veuillez choisir un groupe --</option>
             <?php while ($row = $stmt->fetch()) { ?>
                 <option value="<?php echo $row['lib_dom']; ?>" 
-                <?php if ($user == $row['lib_dom'])echo "selected"?> 
+                <?php if ($userGroup == $row['lib_dom'])echo "selected"?> 
                 ><?php echo $row['lib_dom']; ?>
                 </option>
             <?php } ?>
@@ -38,7 +38,7 @@ $stmt = $db->query($sql);
             maxlength="255" minlength="2" placeholder="Donnez un titre ou une description courte pour l'annonce" autofocus = true required = "required">
             <br><br>
         <label for="description">Details :</label><br>
-        <textarea name="description" id="description" cols="150" rows="5" placeholder="Entrez les détails de l'annonce ici" required = "required"></textarea>
+        <textarea name="description" id="description" cols="150" rows="5" placeholder="Entrez les détails de l'annonce ici"></textarea>
             <br><br>
         <label for="date_start">Date de début* :</label>
             <input type="date" name="date_start" id="date_start" required = "required" />
@@ -53,7 +53,6 @@ $stmt = $db->query($sql);
     </form>
 
 
-<!-- footer.php ferme les balises body et html -->
 <?php
 include("footer.php");
 ?>

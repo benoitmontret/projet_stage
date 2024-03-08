@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+<?php
+session_start();
+include("header.php");
+?>
 
-    <title>Ajouter un événement</title>
-</head>
-<body>
-    <p>hello</p>
 <?php
 $titre=$_POST["titre"];
 $description=$_POST["description"];
@@ -35,7 +29,6 @@ $sql='insert into annonce (titre,description,groupe,date_debut,date_fin) values 
         }
 
 ?>
-</body>
-</html>
-
-
+<?php
+include("footer.php");
+?>

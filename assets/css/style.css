@@ -1,9 +1,11 @@
 body {
     font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
 }
 .logo {
     height : 100px;
     width: auto;
+    /* background-color: blueviolet; */
 }
 .banner {
     display: flex;
