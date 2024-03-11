@@ -1,5 +1,5 @@
 <?php
-session_start();
+// $userGroup = $_COOKIE['userGroup'];
 include("header.php");
 ?>
 <head>
@@ -9,17 +9,13 @@ include("header.php");
 <h2>titre de la page 1</h2>
 
 
-<?php
-// $user = "Compta"; //pour les test
-$userGroup = $_COOKIE['userGroup'];
-?>
-
 
 <?php
 // Récupération de la liste des groupes dans la base de donnée
 include ("db.php");
 $sql = "SELECT lib_dom FROM domaines WHERE lib_dom != 'Général' ORDER BY lib_dom ASC";
-$req = $db->query($sql);
+$req = $db->prepare($sql);
+$req->execute();
 ?>
 
     <form name="formulaire_annonce" id="formulaire_annonce" method="POST" action="annonce_save.php">

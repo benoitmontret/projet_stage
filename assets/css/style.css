@@ -1,11 +1,13 @@
 body {
     font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 24px;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 header {
     background-color: antiquewhite;
-    margin: 2rem;
+    padding: 8px;
 }
 .logo {
     height : 100px;
@@ -23,6 +25,6 @@ header {
 footer{
     background-color: black;
     color: white;
-    margin: 2rem;
+    padding: 8px;
 
 }

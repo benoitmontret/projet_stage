@@ -16,20 +16,17 @@ if (!empty($_POST['groupListe'])) {
 include("header.php");
 ?>
 
-<p>hello !</p> 
 <a href="annonce_form.php">ajout annonce</a><br>
 
 
-<?php
-// $userGroup = "Accueil"; //pour les test
-// $userGroup = $_SESSION['userGroup'];
-?>
 
 <?php
 // Récupération de la liste des groupes dans la base de donnée
 include ("db.php");
 $sql = "SELECT lib_dom FROM domaines WHERE lib_dom != 'Général' ORDER BY lib_dom ASC";
-$req = $db->query($sql);
+$req = $db->prepare($sql);
+$req->execute();
+
 ?>
 
 <form action="" id="groupForm" method="post">
@@ -47,11 +44,11 @@ $req = $db->query($sql);
 
 <?php
 //récupération des annonces
-
-$now=date("d/m/Y"); //date du jour au format dans la table pour pouvoir comparer
-$sql = "SELECT id, titre, libellé, groupe, date_debut, date_fin FROM annonce WHERE (groupe='Général' || groupe=?)";
+$now=date("Y-m-d"); //date du jour au format dans la table pour pouvoir comparer
+$sql = "SELECT id, titre, libellé, groupe, date_debut, date_fin FROM annonce WHERE (date_fin >= ? && (groupe='Général' || groupe=?))ORDER BY date_fin ASC ";
 $req = $db->prepare($sql);
-$req->bindvalue(1, $userGroup, PDO::PARAM_STR);
+$req->bindvalue(1, $now, PDO::PARAM_STR);
+$req->bindvalue(2, $userGroup, PDO::PARAM_STR);
 $req->execute();
 
 
@@ -63,12 +60,13 @@ $req->execute();
 
 
 
-echo $now,"<br>";
+echo $now," ",$userGroup,"<br><br>";
     while ($row = $req->fetch()) { 
-        // echo $row['id']," : ", $row['titre'], "<br>";
-        echo $row['groupe'], "<br>"; 
-//         echo $row['libellé'], "<br>";
-        echo "début : ", date("d/m/Y", strtotime($row['date_debut'])), " - fin : ", date("d/m/Y", strtotime($row['date_fin'])),"<br><br>";
+        echo "Titre : " , $row["titre"] , " ";
+        echo "Groupe : " , $row["groupe"] , "<br>";
+        echo "Libellé : " , $row["libellé"] , "<br>";
+        echo "Date de début : " , $row["date_debut"] , " ";
+        echo "Date de fin : " , $row["date_fin"] , "<br><br>";
     }
 ?>
 
