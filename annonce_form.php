@@ -1,5 +1,5 @@
 <?php
-// $userGroup = $_COOKIE['userGroup'];
+$userGroup = $_COOKIE['userGroup'];
 include("header.php");
 ?>
 <head>

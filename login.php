@@ -12,9 +12,10 @@ if (!empty($_POST['nom'])) {
     $user=$_POST['nom'];
 }
 
+
 if ($user): ?>
     <h2>Bonjour <?= htmlentities($user) ?></h2>
-    <a href="login.php?action=deconnecter">Se déconnecter</a>
+    <a href="logout.php?action=deconnecter">Se déconnecter</a><br>
 <?php else: 
     include ("db.php");
     $sql = "SELECT nom FROM benevoles ORDER BY nom";
@@ -34,4 +35,7 @@ if ($user): ?>
         
         <input type="date" name="dt_nais" placeholder="Votre date de naissance" required />
         <input type="submit" value="Connexion">
-<?php endif; ?>
+<?php endif; 
+
+
+?>

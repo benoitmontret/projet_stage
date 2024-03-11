@@ -1,13 +1,3 @@
-<?php
-if (!empty($_COOKIE['user'])) {
-    $user = $_COOKIE['user'];
-} else {
-    $user =null;
-}
-$userGroup = $_COOKIE['userGroup'];
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -32,10 +22,4 @@ $userGroup = $_COOKIE['userGroup'];
         </div>
     </header>
 
-<?php
-if ($user): ?>
-    <h2>Bonjour <?= htmlentities($user) ?></h2>
-    <a href="login.php?action=deconnecter">Se déconnecter</a><br>
-<?php else: ?>
-<a href="login.php">Connexion</a><br>
-<?php endif; ?>
+
