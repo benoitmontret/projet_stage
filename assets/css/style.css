@@ -2,6 +2,11 @@ body {
     font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 24px;
 }
+
+header {
+    background-color: antiquewhite;
+    margin: 2rem;
+}
 .logo {
     height : 100px;
     width: auto;
@@ -11,4 +16,13 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 2rem;
+}
+
+
+
+footer{
+    background-color: black;
+    color: white;
+    margin: 2rem;
+
 }
