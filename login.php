@@ -1,7 +1,7 @@
 <?php
 $user = null;
 // if (isset($_COOKIE['prev'])){
-//     $prev_page = $_COOKIE['prev'];
+    $prev_page = $_COOKIE['prev'];
 //     unset($_COOKIE['prev']);
 
 // } else {
@@ -27,17 +27,20 @@ if (!empty($_POST['nom'])) {
 include("header.php");
 
 if ($user): ?>
-    <h2>Bonjour <?= htmlentities($user) ?></h2>
+<div class="log_status">
 
-    <a href="logout.php?action=deconnecter">Se déconnecter</a><br>
+    <p>Bonjour <?= htmlentities($user) ?></p>
+    
+    <a class="button" href="logout.php?action=deconnecter">Se déconnecter</a><br>
+</div>
 <?php else: 
     include ("db.php");
     $sql = "SELECT nom FROM benevoles ORDER BY nom";
     $req = $db->prepare($sql);
     $req->execute();
     ?>
-    <form action="" method="POST">
-        <select name="nom" required>
+    <form class="formulaire" action="" method="POST">
+        <select class="item_menu" name="nom" required>
             <option selected>Selectionnez votre nom</option>
 
             <?php while ($row = $req->fetch()) { ?>
@@ -47,10 +50,12 @@ if ($user): ?>
             <?php } ?>
         </select>
         
-        <input type="date" name="dt_nais" placeholder="Votre date de naissance"  />
+        <input class="item_menu" type="date" name="dt_nais" placeholder="Votre date de naissance"  />
         <!-- ajouter required -->
-        <input type="submit" value="Connexion">
-<?php endif; 
-
+        <br>
+        <input class="button btn_valid" type="submit" value="Connexion">
+<?php endif;?> 
+</form>
+<?php
 include("footer.php");
 ?>

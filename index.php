@@ -1,5 +1,6 @@
 <?php
 $userGroup = null;
+setcookie('prev','index.php');
 //s'il existe un cookie on definit le groupe avec, sinon on le fixe à général
 if (!empty($_COOKIE['userGroup'])) {
     $userGroup = $_COOKIE['userGroup'];
@@ -19,9 +20,8 @@ include("login_option.php")
 
 ?>
 
-<!-- <a href="login.php">Connexion</a><br> -->
-<!-- <a href="annonce_form.php">ajout annonce</a><br> -->
-<a href="login_annonce.php">Ajouter annonce</a> 
+<br>
+<a class="button" href="login_annonce.php">Ajouter annonce</a> 
 
 
 
@@ -37,8 +37,8 @@ $req->execute();
 
     <div class="groupe_menu">
 
-        <form action="" id="groupForm" method="post">
-            <select name="groupListe" id="groupListe" size ="15" onchange="maj();">
+        <form  action="" id="groupForm" method="post">
+            <select class="item_menu" name="groupListe" id="groupListe" size ="15" onchange="maj();">
                 <option value="">-- Veuillez choisir un groupe --</option>
                 <option value="Général" selected>Général </option>
                 <?php while ($row = $req->fetch()) { ?>

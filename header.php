@@ -22,5 +22,5 @@
         </div>
     </header>
 <?php
-// echo $_COOKIE['prev'];
+echo $_COOKIE['prev'];
 ?>

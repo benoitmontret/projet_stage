@@ -4,13 +4,14 @@ if (!empty($_COOKIE['user'])) {
 } else {
     $user = null;
 }
-
-
+?>
+<div class="log_status">
+<?php
 if ($user): ?>
 
-    <h2>Bonjour <?= htmlentities($user) ?></h2>
-    <a href="logout.php?action=deconnecter">Se déconnecter</a><br>
-<?php else: ?>
-    <a href="login.php">Se connecter</a>
-
-<?php endif;?>
+    <p>Bonjour <?= htmlentities($user) ?></p>
+    <a class = "button" href="logout.php?action=deconnecter">Se déconnecter</a><br>
+    <?php else: ?>
+        <a class = "button" href="login.php">Se connecter</a>
+    <?php endif;?>
+</div>

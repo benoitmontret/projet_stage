@@ -8,15 +8,19 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
 } else {
     $user=$_COOKIE['user'];
 }
-
-if ($user): ?>
-    <h2>Bonjour <?= htmlentities($user) ?> Vous êtes arrivé ici par erreur ?</h2>
+?>
+<div class="log_status">
+    <?php
+    if ($user): ?>
+    
+    <p>Bonjour <?= htmlentities($user) ?> Vous êtes arrivé ici par erreur ?</p>
     <a href="logout.php?action=deconnecter">Se déconnecter</a><br>
     <?php else: ?>
-        <h2>Vous êtes déconnectez !</h2>
+        <p class="logout_mes">Vous êtes déconnectez !</p>
         <?php endif;?>
-
-<a href="login.php">Connexion</a><br>
+        
+        <!-- <a class="button" href="login.php">Se Connecter</a><br> -->
+</div>
 
 <?php
 include("footer.php");
