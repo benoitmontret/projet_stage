@@ -21,5 +21,6 @@
             <h2 class="userGroup" id="userGroup">GROUP</h2>
         </div>
     </header>
-
-
+<?php
+// echo $_COOKIE['prev'];
+?>

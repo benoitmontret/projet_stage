@@ -14,12 +14,14 @@ if (!empty($_POST['groupListe'])) {
 }
 
 include("header.php");
+include("login_option.php")
+
 
 ?>
 
-<a href="login.php">Connexion</a><br>
-<a href="annonce_form.php">ajout annonce</a><br>
-<a href="test redirecte"></a>
+<!-- <a href="login.php">Connexion</a><br> -->
+<!-- <a href="annonce_form.php">ajout annonce</a><br> -->
+<a href="login_annonce.php">Ajouter annonce</a> 
 
 
 

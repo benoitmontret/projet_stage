@@ -1,6 +1,8 @@
 <?php
 $userGroup = $_COOKIE['userGroup'];
 include("header.php");
+include("login_option.php")
+
 ?>
 <head>
 <script src="./assets/annonce.js" defer></script>
