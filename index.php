@@ -19,6 +19,7 @@ include("header.php");
 
 <a href="login.php">Connexion</a><br>
 <a href="annonce_form.php">ajout annonce</a><br>
+<a href="test redirecte"></a>
 
 
 
@@ -28,49 +29,50 @@ include ("db.php");
 $sql = "SELECT lib_dom FROM domaines WHERE lib_dom != 'Général' ORDER BY lib_dom ASC";
 $req = $db->prepare($sql);
 $req->execute();
-
 ?>
 
-<form action="" id="groupForm" method="post">
-    <select name="groupListe" id="groupListe" size ="15" onchange="maj();">
-        <option value="">-- Veuillez choisir un groupe --</option>
-        <option value="Général" selected>Général </option>
-        <?php while ($row = $req->fetch()) { ?>
-            <option value="<?php echo $row['lib_dom']; ?>" 
-            <?php if ($userGroup == $row['lib_dom'])echo "selected"?> 
-            ><?php echo $row['lib_dom']; ?>
-            </option>
-        <?php } ?>
-    </select>
-</form>
+<div class="container">
 
-<?php
-//récupération des annonces
-$now=date("Y-m-d"); //date du jour au format dans la table pour pouvoir comparer
-$sql = "SELECT id, titre, libellé, groupe, date_debut, date_fin FROM annonce WHERE (date_fin >= ? && (groupe='Général' || groupe=?))ORDER BY date_fin ASC ";
-$req = $db->prepare($sql);
-$req->bindvalue(1, $now, PDO::PARAM_STR);
-$req->bindvalue(2, $userGroup, PDO::PARAM_STR);
-$req->execute();
+    <div class="groupe_menu">
 
+        <form action="" id="groupForm" method="post">
+            <select name="groupListe" id="groupListe" size ="15" onchange="maj();">
+                <option value="">-- Veuillez choisir un groupe --</option>
+                <option value="Général" selected>Général </option>
+                <?php while ($row = $req->fetch()) { ?>
+                    <option value="<?php echo $row['lib_dom']; ?>" 
+                    <?php if ($userGroup == $row['lib_dom'])echo "selected"?> 
+                    ><?php echo $row['lib_dom']; ?>
+                </option>
+                <?php } ?>
+            </select>
+        </form>
+    </div>
 
+    <div class="liste_annonce">
+        <?php
+        //récupération des annonces
+        $now=date("Y-m-d"); //date du jour au format dans la table pour pouvoir comparer
+        $sql = "SELECT id, titre, libellé, groupe, date_debut, date_fin FROM annonce WHERE (date_fin >= ? && (groupe='Général' || groupe=?))ORDER BY date_fin ASC ";
+        $req = $db->prepare($sql);
+        $req->bindvalue(1, $now, PDO::PARAM_STR);
+        $req->bindvalue(2, $userGroup, PDO::PARAM_STR);
+        $req->execute();
+    
+        echo $now," ",$userGroup,"<br><br>";
+        while ($row = $req->fetch()) { 
+            echo "<div class=annonce>";
 
-
-
-
-
-
-
-
-echo $now," ",$userGroup,"<br><br>";
-    while ($row = $req->fetch()) { 
-        echo "Titre : " , $row["titre"] , " ";
-        echo "Groupe : " , $row["groupe"] , "<br>";
-        echo "Libellé : " , $row["libellé"] , "<br>";
-        echo "Date de début : " , $row["date_debut"] , " ";
-        echo "Date de fin : " , $row["date_fin"] , "<br><br>";
-    }
-?>
+            echo "Titre : " , $row["titre"] , " ";
+            echo "Groupe : " , $row["groupe"] , "<br>";
+            echo "Libellé : " , $row["libellé"] , "<br>";
+            echo "Date de début : " , $row["date_debut"] , " ";
+            echo "Date de fin : " , $row["date_fin"];
+            echo "</div>";
+        }
+    ?>
+    </div>
+</div>
 
 <?php
 include("footer.php");
