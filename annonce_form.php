@@ -38,8 +38,8 @@ $req->execute();
         <input class="item_menu" type="text" name="titre" id="titre" size="50"
         maxlength="255" minlength="2" placeholder="Donnez un titre ou une description courte pour l'annonce" autofocus = true required = "required">
         <br><br>
-        <label class="item_menu" for="libellé">Details :</label><br>
-        <textarea name="libellé" id="libellé" cols="150" rows="5" placeholder="Entrez les détails de l'annonce ici"></textarea>
+        <label class="item_menu" for="libelle">Details :</label><br>
+        <textarea name="libelle" id="libelle" cols="150" rows="5" placeholder="Entrez les détails de l'annonce ici"></textarea>
         <br><br>
         <label for="date_start">Date de début* :</label>
         <input class="item_menu" type="date" name="date_start" id="date_start" required = "required" />

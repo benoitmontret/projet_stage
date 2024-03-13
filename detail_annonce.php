@@ -5,9 +5,9 @@ include("header.php");
 include("login_option.php");
 include ("db.php");
 
-$sql = "SELECT titre, libellé, groupe, date_debut, date_fin FROM annonce where id=?";
+$sql = "SELECT titre, libelle, groupe, date_debut, date_fin FROM annonce where id_annonce=?";
 $req = $db->prepare($sql);
-$req->bindvalue(1, $_GET['id'], PDO::PARAM_INT);
+$req->bindvalue(1, $_GET['id_annonce'], PDO::PARAM_INT);
 $req->execute();
 $resultat = $req->fetch();
 
@@ -16,8 +16,8 @@ echo '<div class="annonce detail '.$resultat["groupe"].'">';
     echo '<p class = "annonce_group">Groupe : ' . $resultat["groupe"] . '<p>';
     echo '<p class = "annonce_titre">Titre : ' . $resultat["titre"] . '<p>';
     echo '<p class="annonce_lib">Libellé : ';
-        if ($resultat["libellé"]) {
-            echo $resultat["libellé"];
+        if ($resultat["libelle"]) {
+            echo $resultat["libelle"];
         } else {
             echo 'Aucune description';
         }
