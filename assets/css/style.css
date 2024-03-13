@@ -49,11 +49,11 @@ footer{
     background-color: #0000aa;
 }
 .btn_valid {
-    background-color: #009900;
+    background-color: #008000;
     text-align: center;
 }
 .btn_valid:hover {
-    background-color: #005500;
+    background-color: #005000;
 }
 
 .container {
@@ -94,9 +94,17 @@ fieldset{
     width: 95%;
 }
 .annonce {
-    border: 3px solid;
-    border-radius: 50px;
+    border: 3px solid #008000;
+    border-radius: 70px;
     padding: 2rem;
     margin-bottom: 1rem;
+
+}
+.Général{
+    border : solid blue;
+}
+.detail{
+    width: 80%;
+    margin: auto;
 }
 

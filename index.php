@@ -15,12 +15,9 @@ if (!empty($_POST['groupListe'])) {
 }
 
 include("header.php");
-include("login_option.php")
-
-
+include("login_option.php");
 ?>
 
-<br>
 <a class="button" href="login_annonce.php">Ajouter annonce</a> 
 
 
@@ -61,21 +58,31 @@ $req->execute();
         $req->bindvalue(2, $userGroup, PDO::PARAM_STR);
         $req->execute();
     
-        echo $now," ",$userGroup,"<br><br>";
         while ($row = $req->fetch()) { 
-            echo "<div class=annonce>";
+            echo '<div class="annonce '.$row["groupe"].'">';
+            
+            echo '<p class = "annonce_group">Groupe : ' . $row["groupe"] . '<p>';
+            echo '<p class = "annonce_titre">Titre : ' . $row["titre"] . '<p>';
+            echo '<p class="annonce_lib">Libellé : ';
+                if ($row["libellé"]) {
+                    echo $row["libellé"];
+                } else {
+                    echo 'Aucune description';
+                }
+            echo '<p>';
 
-            echo "Titre : " , $row["titre"] , " ";
-            echo "Groupe : " , $row["groupe"] , "<br>";
-            echo "Libellé : " , $row["libellé"] , "<br>";
-            echo "Date de début : " , $row["date_debut"] , " ";
-            echo "Date de fin : " , $row["date_fin"];
+            
+
+            echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($row["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($row["date_fin"])).'<p>';
+            
+            echo '<a href="detail_annonce.php?id='.$row["id"].'">Voir plus</a>';
             echo "</div>";
         }
-    ?>
+        ?>
     </div>
 </div>
 
 <?php
+echo $now." ".$userGroup."<br><br>";
 include("footer.php");
 ?>

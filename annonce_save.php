@@ -34,8 +34,8 @@ $sql='insert into annonce (titre,libellé,groupe,date_debut,date_fin,auteur) val
             echo "Titre : " , $resultat["titre"] , " ";
             echo "Groupe : " , $resultat["groupe"] , "<br>";
             echo "Libellé : " , $resultat["libellé"] , "<br>";
-            echo "Date de début : " , $resultat["date_debut"] , " ";
-            echo "Date de fin : " , $resultat["date_fin"] , "<br>";
+            echo "Date de début : " , date("d/m/Y",strtotime($resultat["date_debut"])) , " ";
+            echo "Date de fin : " , date("d/m/Y",strtotime($resultat["date_fin"])) , "<br>";
 
 
         } else {

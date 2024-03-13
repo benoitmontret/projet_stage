@@ -1,6 +1,6 @@
 <?php
 include("header.php");
-include("login_option.php")
+include("login_option.php");
 
 ?>
 
