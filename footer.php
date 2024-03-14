@@ -1,9 +1,8 @@
 
 <footer>
 
-    <h4>contenu footer</h4>
+    <h4>Echo : Espace de communication pour harmoniser l'organisation</h4>
     <?php
-// echo "session= ".$_SESSION['userGroup']."  /  groupe= ".$userGroup
 ?>
 </footer>
 </body>
