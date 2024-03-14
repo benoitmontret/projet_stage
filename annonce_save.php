@@ -24,18 +24,29 @@ $sql='insert into annonce (titre,libelle,groupe,date_debut,date_fin,auteur) valu
     if ($req->execute()) {
         echo "<p>Annonce ajoutée avec succès !</p>";
         $id = $db->lastInsertId();
-        $sql = "SELECT titre, libelle, groupe, date_debut, date_fin FROM annonce WHERE id_annonce=?";
+        $sql = "SELECT titre, libelle, groupe, date_debut, date_fin, auteur FROM annonce WHERE id_annonce=?";
         $req = $db->prepare($sql);
         $req->bindvalue(1, $id, PDO::PARAM_STR);
         $req->execute();
             $resultat = $req->fetch();
 
             // Afficher les valeurs
-            echo "Titre : " , $resultat["titre"] , " ";
-            echo "Groupe : " , $resultat["groupe"] , "<br>";
-            echo "Libellé : " , $resultat["libelle"] , "<br>";
-            echo "Date de début : " , date("d/m/Y",strtotime($resultat["date_debut"])) , " ";
-            echo "Date de fin : " , date("d/m/Y",strtotime($resultat["date_fin"])) , "<br>";
+            echo '<div class="annonce detail '.$resultat["groupe"].'">';
+            
+            echo '<p class = "annonce_group">Groupe : ' . $resultat["groupe"] . '<p>';
+            echo '<p class = "annonce_titre">Titre : ' . $resultat["titre"] . '<p>';
+            echo '<p class = "annonce_lib">Libellé : ';
+                if ($resultat["libelle"]) {
+                    echo $resultat["libelle"];
+                } else {
+                    echo 'Aucune description';
+                }
+            echo '<p>';
+            echo '<p class = "annonce_auteur">Auteur : '.$resultat["auteur"].'<p>';
+            echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'<p>';
+        
+        echo "</div>";
+        
 
 
         } else {
