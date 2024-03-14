@@ -29,13 +29,13 @@ include("header.php");
 if ($user): ?>
 <div class="log_status">
 
-    <p>Bonjour <?= htmlentities($user) ?></p>
+    <p class="user_login"><?= htmlentities($user) ?></p>
     
     <a class="button" href="logout.php?action=deconnecter">Se déconnecter</a><br>
 </div>
 <?php else: 
     include ("db.php");
-    $sql = "SELECT nom FROM benevoles ORDER BY nom";
+    $sql = "SELECT nom, pnom FROM benevoles ORDER BY nom";
     $req = $db->prepare($sql);
     $req->execute();
     ?>
@@ -44,8 +44,8 @@ if ($user): ?>
             <option selected>Selectionnez votre nom</option>
 
             <?php while ($row = $req->fetch()) { ?>
-                <option value="<?php echo $row['nom']; ?>" 
-                ><?php echo $row['nom']; ?>
+                <option value="<?php echo $row['nom']." ".$row["pnom"]; ?>" 
+                ><?php echo $row['nom']." ".$row["pnom"]; ?>
                 </option>
             <?php } ?>
         </select>

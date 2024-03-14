@@ -29,7 +29,12 @@ footer{
 }
 .log_status{
     font-size: 18px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     text-align: end;
+}
+.user_login {
+    font-weight: bold;
 }
 .logout_mes{
     text-align: center;

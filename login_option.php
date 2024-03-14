@@ -9,7 +9,7 @@ if (!empty($_COOKIE['user'])) {
 <?php
 if ($user): ?>
 
-    <p>Bonjour <?= htmlentities($user) ?></p>
+    <p class="user_login"><?= htmlentities($user) ?></p>
     <a class = "button" href="logout.php?action=deconnecter">Se déconnecter</a><br>
     <?php else: ?>
         <a class = "button" href="login.php">Se connecter</a>
