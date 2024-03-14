@@ -112,4 +112,17 @@ fieldset{
     width: 80%;
     margin: auto;
 }
-
+.commentaire {
+    margin : 0px 20px 5px;
+    padding: 0px 20px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+}
+.comm_item {
+    font-style: italic;
+    /* margin : 0; */
+}
+.comm_auteur {
+    text-align-last: right;
+    /* margin-top: 0; */
+}

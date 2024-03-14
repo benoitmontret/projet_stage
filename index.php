@@ -35,7 +35,7 @@ $req->execute();
     <div class="groupe_menu">
 
         <form  action="" id="groupForm" method="post">
-            <select class="item_menu" name="groupListe" id="groupListe" size ="15" onchange="maj();">
+            <select class="item_menu" name="groupListe" id="groupListe" size ="30" onchange="maj();">
                 <option value="">-- Veuillez choisir un groupe --</option>
                 <option value="Général" selected>Général </option>
                 <?php while ($row = $req->fetch()) { ?>
@@ -73,7 +73,7 @@ $req->execute();
                 echo '<p class = "annonce_auteur">Auteur : '.$row["auteur"].'<p>';
                 echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($row["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($row["date_fin"])).'<p>';
                 
-                echo '<a href="detail_annonce.php?id_annonce='.$row["id_annonce"].'">Voir plus</a>';
+                echo '<a class="button" href="detail_annonce.php?id='.$row["id_annonce"].'">Voir plus</a>';
             echo "</div>";
         }
         ?>
