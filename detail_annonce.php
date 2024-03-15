@@ -4,6 +4,19 @@ setcookie('prev','detail_annonce.php?id='.$_GET['id']);
 include("header.php");
 include("login_option.php");
 include ("db.php");
+if (isset($_POST['comm'])) {
+    $id_annonce=$_POST["id_annonce"];
+    $comm=$_POST["comm"];
+    $auteur_comm=$_POST["auteur_comm"];
+    $sql='INSERT into comm_annonce (comm,auteur_comm,id_annonce) values (?,?,?)';
+    $req=$db->prepare($sql);
+    $req->bindvalue(1,$comm,PDO::PARAM_STR);
+    $req->bindvalue(2,$auteur_comm,PDO::PARAM_STR);
+    $req->bindvalue(3,$id_annonce,PDO::PARAM_STR);
+
+    $req->execute();
+
+} 
 $id=$_GET['id'];
 $sql = "SELECT titre, libelle, groupe, date_debut, date_fin, auteur FROM annonce where id_annonce=?";
 $req = $db->prepare($sql);
@@ -69,22 +82,7 @@ echo "</div><br>";
     </div>
     
     <?php
-if (isset($_POST['comm'])) {
-    $id_annonce=$_POST["id_annonce"];
-    $comm=$_POST["comm"];
-    $auteur_comm=$_POST["auteur_comm"];
-    include("db.php");
-    $sql='INSERT into comm_annonce (comm,auteur_comm,id_annonce) values (?,?,?)';
-    $req=$db->prepare($sql);
-    $req->bindvalue(1,$comm,PDO::PARAM_STR);
-    $req->bindvalue(2,$auteur_comm,PDO::PARAM_STR);
-    $req->bindvalue(3,$id_annonce,PDO::PARAM_STR);
 
-    $req->execute();
-
-} else {
-    echo 'NON';
-}
 
 include("footer.php");
 ?>
