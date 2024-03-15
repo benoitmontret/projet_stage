@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <title>Echo - SPF76</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
@@ -15,7 +16,8 @@
         <nav></nav>
         <div class="banner">
             <a href="index.php">
-                <img class="logo" src="./assets/img/logosp.png " alt="">
+                <img class="logo" src="./assets/img/logosp.png " alt="spf 76">
+                <img src="./assets/img/echo.svg" alt="echo">
             </a>
             <div class="app">
                 <p>Secours Populaire Français</p>

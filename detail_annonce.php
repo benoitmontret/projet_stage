@@ -1,5 +1,5 @@
 <?php
-setcookie('prev','detail_annonce.php');
+setcookie('prev','detail_annonce.php?id='.$_GET['id']);
 
 include("header.php");
 include("login_option.php");
@@ -40,14 +40,14 @@ echo '<div class="annonce detail '.$resultat["groupe"].'">';
                 echo "<p>Il n'y aucun commentaire.</p>";
             };
 
-echo "</div>";
+echo "</div><br>";
 ?>
 
 <div class="formulaire">
 
     <form  name="formulaire_annonce" id="formulaire_annonce" method="POST" action="">
         <fieldset> <!-- encadrement -->
-
+        <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de facon invisible -->
         <label class="item_menu" for="comm">Commentaire* :</label><br>
         <textarea name="comm" id="comm" cols="150" rows="5" placeholder="Laissez votre commentaire ici"  autofocus = true required = "required"></textarea>
         <br><br>
@@ -66,10 +66,25 @@ echo "</div>";
         <input class= "button btn_valid" type="submit" value="Laisser un commentaire">
         </fieldset>
     </form>
-</div>
+    </div>
+    
+    <?php
+if (isset($_POST['comm'])) {
+    $id_annonce=$_POST["id_annonce"];
+    $comm=$_POST["comm"];
+    $auteur_comm=$_POST["auteur_comm"];
+    include("db.php");
+    $sql='INSERT into comm_annonce (comm,auteur_comm,id_annonce) values (?,?,?)';
+    $req=$db->prepare($sql);
+    $req->bindvalue(1,$comm,PDO::PARAM_STR);
+    $req->bindvalue(2,$auteur_comm,PDO::PARAM_STR);
+    $req->bindvalue(3,$id_annonce,PDO::PARAM_STR);
 
-<!-- <span class="button">Ajouter Commentaire</span>  -->
+    $req->execute();
 
-<?php
+} else {
+    echo 'NON';
+}
+
 include("footer.php");
 ?>

@@ -56,6 +56,8 @@ if ($user): ?>
         <input class="button btn_valid" type="submit" value="Connexion">
 <?php endif;?> 
 </form>
+
 <?php
+echo '<a class="button" href="'.$prev_page.'">Retour</a>';
 include("footer.php");
 ?>

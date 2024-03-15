@@ -11,7 +11,7 @@ $date_end=$_POST["date_end"];
 $auteur = $_COOKIE['user'];
 
 include ("db.php");
-$sql='insert into annonce (titre,libelle,groupe,date_debut,date_fin,auteur) values (?,?,?,?,?,?)';
+$sql='INSERT INTO annonce (titre,libelle,groupe,date_debut,date_fin,auteur) values (?,?,?,?,?,?)';
     $req=$db->prepare($sql);
     $req->bindvalue(1,$titre,PDO::PARAM_STR);
     $req->bindvalue(2,$libelle,PDO::PARAM_STR);

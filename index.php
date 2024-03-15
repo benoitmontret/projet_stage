@@ -21,7 +21,6 @@ include("login_option.php");
 <a class="button" href="login_annonce.php">Ajouter annonce</a> 
 
 
-
 <?php
 // Récupération de la liste des groupes dans la base de donnée
 include ("db.php");
@@ -57,6 +56,7 @@ $req->execute();
         $req->bindvalue(1, $now, PDO::PARAM_STR);
         $req->bindvalue(2, $userGroup, PDO::PARAM_STR);
         $req->execute();
+        $max=200; //limite pour le libellé
     
         while ($row = $req->fetch()) { 
             echo '<div class="annonce '.$row["groupe"].'">';
@@ -65,7 +65,11 @@ $req->execute();
                 echo '<p class = "annonce_titre">Titre : ' . $row["titre"] . '<p>';
                 echo '<p class="annonce_lib">Libellé : ';
                     if ($row["libelle"]) {
-                        echo $row["libelle"];
+                        echo substr($row["libelle"], 0, $max);
+                        if (strlen($row["libelle"])>$max){
+                            echo' (...) Cliquez sur "Voir plus" pour lire la suite !';
+                        }
+
                     } else {
                         echo 'Aucune description';
                     }
