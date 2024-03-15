@@ -1,4 +1,4 @@
-
+</main>
 <footer>
 
     <h4>Echo : Espace de communication pour harmoniser l'organisation</h4>

@@ -85,6 +85,5 @@ $req->execute();
 </div>
 
 <?php
-echo $now." ".$userGroup."<br><br>";
 include("footer.php");
 ?>

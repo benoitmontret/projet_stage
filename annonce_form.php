@@ -50,7 +50,9 @@ $req->execute();
         
         
         <br><br>
+        <div class="center_btn">
         <input class= "button btn_valid" type="submit" value="Envoyer">
+            </div>
     </fieldset>
 </form>
 </div>

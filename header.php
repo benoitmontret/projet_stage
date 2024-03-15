@@ -19,13 +19,15 @@
                 <img class="logo" src="./assets/img/logosp.png " alt="spf 76">
                 <img src="./assets/img/echo.svg" alt="echo">
             </a>
-            <div class="app">
+            <div class="title_header">
+            <img class="logo-echo" src="./assets/img/echo.svg" alt="echo">
+            <p class="title-echo">Espace de Communication pour l'Harmonisation de l'Oraganisation</p> 
                 <p>Secours Populaire Français</p>
-                <p>Echo</p> 
             </div>
             <h2 class="userGroup" id="userGroup">GROUP</h2>
         </div>
     </header>
 <?php
-echo $_COOKIE['prev'];
+// echo $_COOKIE['prev'];
 ?>
+<main>

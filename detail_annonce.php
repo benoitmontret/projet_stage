@@ -4,7 +4,7 @@ setcookie('prev','detail_annonce.php?id='.$_GET['id']);
 include("header.php");
 include("login_option.php");
 include ("db.php");
-if (isset($_POST['comm'])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id_annonce=$_POST["id_annonce"];
     $comm=$_POST["comm"];
     $auteur_comm=$_POST["auteur_comm"];
@@ -15,8 +15,9 @@ if (isset($_POST['comm'])) {
     $req->bindvalue(3,$id_annonce,PDO::PARAM_STR);
 
     $req->execute();
+}
 
-} 
+$now=time();
 $id=$_GET['id'];
 $sql = "SELECT titre, libelle, groupe, date_debut, date_fin, auteur FROM annonce where id_annonce=?";
 $req = $db->prepare($sql);
@@ -46,8 +47,15 @@ echo '<div class="annonce detail '.$resultat["groupe"].'">';
             while ($row = $req->fetch()) { 
                     echo '<div class="commentaire">';
                         echo '<p class="comm_item">'.$row["comm"].'</p> ';
+                        echo '<p class="interval">Posté il y a : ';
+                            $delay= $now-strtotime($row["date_post"]);
+                            // Convertir la différence en jours, heures, minutes et secondes
+                            $jours = floor($delay / (60 * 60 * 24));
+                            $heures = floor(($delay % (60 * 60 * 24)) / (60 * 60));
+                            $minutes = floor(($delay % (60 * 60)) / 60);
+                            $res = (($jours >0) ? $jours." jour(s) " : "") . (($heures >0) ? $heures." heures " : "") . $minutes." minutes</p>"; 
+                            echo $res;
                         echo '<p class="comm_auteur">'.$row["auteur_comm"].'</p> ';
-                        echo time()." ".$row["date_post"];
                     echo '</div>';
                 };
             } else {
@@ -63,7 +71,7 @@ echo "</div><br>";
         <fieldset> <!-- encadrement -->
         <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de facon invisible -->
         <label class="item_menu" for="comm">Commentaire* :</label><br>
-        <textarea name="comm" id="comm" cols="150" rows="5" placeholder="Laissez votre commentaire ici"  autofocus = true required = "required"></textarea>
+        <textarea name="comm" id="comm" cols="100" rows="5" placeholder="Laissez votre commentaire ici"  autofocus = true required = "required"></textarea>
         <br><br>
         <label for="auteur_comm">Votre nom* :</label> 
         <input class="item_menu" type="text" name="auteur_comm" id="auteur_comm" size="50"
@@ -77,13 +85,16 @@ echo "</div><br>";
         <br><br>
         <p class="mandatory">* Champs obligatoires</p>
         <br><br>
-        <input class= "button btn_valid" type="submit" value="Laisser un commentaire">
+        <div class="center_btn">
+            <input class= "button btn_valid" type="submit" value="Laisser un commentaire">
+        </div>
         </fieldset>
     </form>
-    </div>
+</div>
     
-    <?php
-
-
+<?php
+echo '<div class="center_btn">';
+echo '<a class="button" href="index.php">Retour</a>';
+echo '</div>';
 include("footer.php");
 ?>

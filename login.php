@@ -19,10 +19,11 @@ include("header.php");
 
 if ($user): ?>
 <div class="log_status">
-
-    <p class="user_login"><?= htmlentities($user) ?></p>
     
+    <p class="user_login"><?= htmlentities($user) ?></p>
     <a class="button" href="logout.php?action=deconnecter">Se déconnecter</a><br>
+    <p class="log_mes"> Vous êtes connecté(e) !</p>
+    
 </div>
 <?php else: 
     include ("db.php");
@@ -49,6 +50,8 @@ if ($user): ?>
 </form>
 
 <?php
+echo '<div class="center_btn">';
 echo '<a class="button" href="'.$prev_page.'">Retour</a>';
+echo '</div>';
 include("footer.php");
 ?>
