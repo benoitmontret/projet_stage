@@ -1,13 +1,6 @@
 <?php
 $user = null;
-// if (isset($_COOKIE['prev'])){
     $prev_page = $_COOKIE['prev'];
-//     unset($_COOKIE['prev']);
-
-// } else {
-//     setcookie('prev', $_SERVER['HTTP_REFERER']);
-    
-// }
 
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['user']);
@@ -19,8 +12,6 @@ if (!empty($_COOKIE['user'])) {
 if (!empty($_POST['nom'])) {
     setcookie('user', $_POST['nom'], time()+3600); //3600=1h modifier selon besoin
     $user=$_POST['nom'];
-    // Rediriger vers la page précédente
-    // header("Location: " . $prev_page);
 
 }
 

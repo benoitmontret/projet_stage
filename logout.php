@@ -1,4 +1,6 @@
 <?php
+    $prev_page = $_COOKIE['prev'];
+
 include("header.php");
 
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
@@ -23,5 +25,7 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
 </div>
 
 <?php
+echo '<a class="button" href="'.$prev_page.'">Retour</a>';
+
 include("footer.php");
 ?>
