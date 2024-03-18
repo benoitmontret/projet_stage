@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="page_up">
         <nav></nav>
         <div class="banner">
             <a href="index.php">
@@ -22,12 +22,16 @@
             <div class="title_header">
             <img class="logo-echo" src="./assets/img/echo.svg" alt="echo">
             <p class="title-echo">Espace de Communication pour l'Harmonisation de l'Oraganisation</p> 
-                <p>Secours Populaire Français</p>
+                <p>Secours Populaire Français Le Havre</p>
             </div>
             <h2 class="userGroup" id="userGroup">GROUP</h2>
         </div>
     </header>
 <?php
-// echo $_COOKIE['prev'];
+echo $_COOKIE['prev'];
 ?>
-<main>
+<a class="page_up" href="#page_down">
+
+    <img src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
+</a>
+<main >

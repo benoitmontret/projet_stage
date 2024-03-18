@@ -1,10 +1,22 @@
 /* @media (max-width: 768px) {
-    .textarea {
-      cols: 20;
+
     }
   } */
 *{
-    box-shadow: 0 0 0 1px rgb(255, 255, 255) inset;
+    box-shadow: 0 0 0 1px rgb(105, 103, 103) inset;
+    scroll-behavior: smooth;
+}
+.page_down ,.page_up{
+    display: flex;
+    justify-content:end;
+}
+.page_up{
+    position :sticky;
+    top : 20px;
+}
+.page_down{
+    position :sticky;
+    bottom: 80px;
 }
 html, body {
     height: 100%;
@@ -18,7 +30,8 @@ display :flex;
 flex-direction: column;
 }
 header {
-    /* position: fixed; */
+    /* position: sticky; */
+    top : 0px;
     background-color: antiquewhite;
 }
 footer{

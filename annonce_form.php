@@ -1,4 +1,5 @@
 <?php
+$prev_page = $_COOKIE['prev'];
 $userGroup = $_COOKIE['userGroup'];
 include("header.php");
 include("login_option.php")
@@ -59,5 +60,9 @@ $req->execute();
 
 
 <?php
+echo '<div class="center_btn">';
+    echo '<a class="button" href="'.$prev_page.'">Retour</a>';
+echo '</div>';
+
 include("footer.php");
 ?>

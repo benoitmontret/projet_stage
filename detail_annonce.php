@@ -15,6 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $req->bindvalue(3,$id_annonce,PDO::PARAM_STR);
 
     $req->execute();
+    $sql2="UPDATE annonce SET nb_comm = nb_comm +1 WHERE id_annonce = $id_annonce";
+    $req2=$db->prepare($sql2);
+    $req2->execute();
 }
 
 $now=time();
@@ -27,17 +30,17 @@ $resultat = $req->fetch();
 
 echo '<div class="annonce detail '.$resultat["groupe"].'">';
             
-    echo '<p class = "annonce_group">Groupe : ' . $resultat["groupe"] . '<p>';
-    echo '<p class = "annonce_titre">Titre : ' . $resultat["titre"] . '<p>';
+    echo '<p class = "annonce_group">Groupe : ' . $resultat["groupe"] . '</p>';
+    echo '<p class = "annonce_titre">Titre : ' . $resultat["titre"] . '</p>';
     echo '<p class = "annonce_lib">Libellé : ';
         if ($resultat["libelle"]) {
             echo $resultat["libelle"];
         } else {
             echo 'Aucune description';
         }
-    echo '<p>';
-    echo '<p class = "annonce_auteur">Auteur : '.$resultat["auteur"].'<p>';
-    echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'<p>';
+    echo '</p>';
+    echo '<p class = "annonce_auteur">Auteur : '.$resultat["auteur"].'</p>';
+    echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'</p>';
 
         $sql2="SELECT comm, auteur_comm, date_post FROM comm_annonce WHERE id_annonce=? ORDER BY id_comm ASC";
         $req = $db->prepare($sql2);
@@ -71,7 +74,7 @@ echo "</div><br>";
         <fieldset> <!-- encadrement -->
         <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de facon invisible -->
         <label class="item_menu" for="comm">Commentaire* :</label><br>
-        <textarea name="comm" id="comm" cols="100" rows="5" placeholder="Laissez votre commentaire ici"  autofocus = true required = "required"></textarea>
+        <textarea name="comm" id="comm" cols="100" rows="5" placeholder="Laissez votre commentaire ici"  required = "required"></textarea>
         <br><br>
         <label for="auteur_comm">Votre nom* :</label> 
         <input class="item_menu" type="text" name="auteur_comm" id="auteur_comm" size="50"
@@ -94,7 +97,7 @@ echo "</div><br>";
     
 <?php
 echo '<div class="center_btn">';
-echo '<a class="button" href="index.php">Retour</a>';
+    echo '<a class="button" href="index.php">Retour</a>';
 echo '</div>';
 include("footer.php");
 ?>

@@ -1,6 +1,6 @@
 <?php
 $user = null;
-    $prev_page = $_COOKIE['prev'];
+$prev_page = $_COOKIE['prev'];
 
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['user']);
@@ -51,7 +51,7 @@ if ($user): ?>
 
 <?php
 echo '<div class="center_btn">';
-echo '<a class="button" href="'.$prev_page.'">Retour</a>';
+    echo '<a class="button" href="'.$prev_page.'">Retour</a>';
 echo '</div>';
 include("footer.php");
 ?>

@@ -1,4 +1,5 @@
 <?php
+$prev_page = $_COOKIE['prev'];
 include("header.php");
 include("login_option.php");
 
@@ -22,7 +23,7 @@ $sql='INSERT INTO annonce (titre,libelle,groupe,date_debut,date_fin,auteur) valu
     
 
     if ($req->execute()) {
-        echo "<p>Annonce ajoutée avec succès !</p>";
+        echo "<p class='succes'>Annonce ajoutée avec succès !</p>";
         $id = $db->lastInsertId();
         $sql = "SELECT titre, libelle, groupe, date_debut, date_fin, auteur FROM annonce WHERE id_annonce=?";
         $req = $db->prepare($sql);
@@ -33,17 +34,17 @@ $sql='INSERT INTO annonce (titre,libelle,groupe,date_debut,date_fin,auteur) valu
             // Afficher les valeurs
             echo '<div class="annonce detail '.$resultat["groupe"].'">';
             
-            echo '<p class = "annonce_group">Groupe : ' . $resultat["groupe"] . '<p>';
-            echo '<p class = "annonce_titre">Titre : ' . $resultat["titre"] . '<p>';
+            echo '<p class = "annonce_group">Groupe : ' . $resultat["groupe"] . '</p>';
+            echo '<p class = "annonce_titre">Titre : ' . $resultat["titre"] . '</p>';
             echo '<p class = "annonce_lib">Libellé : ';
                 if ($resultat["libelle"]) {
                     echo $resultat["libelle"];
                 } else {
                     echo 'Aucune description';
                 }
-            echo '<p>';
-            echo '<p class = "annonce_auteur">Auteur : '.$resultat["auteur"].'<p>';
-            echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'<p>';
+            echo '</p>';
+            echo '<p class = "annonce_auteur">Auteur : '.$resultat["auteur"].'</p>';
+            echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'</p>';
         
         echo "</div>";
         
@@ -56,5 +57,8 @@ $sql='INSERT INTO annonce (titre,libelle,groupe,date_debut,date_fin,auteur) valu
 
 ?>
 <?php
+echo '<div class="center_btn">';
+    echo '<a class="button" href="index.php">Retour</a>';
+echo '</div>';
 include("footer.php");
 ?>
