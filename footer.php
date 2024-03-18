@@ -1,8 +1,8 @@
-
-<a class="page_down" href="#page_up">
-
-    <img class="page_down" src="./assets/img/arrow-up.svg" alt="fleche vers le haut">
-</a>
+<div class="page_down">
+    <a  href="#page_up">
+        <img src="./assets/img/arrow-up.svg" alt="fleche vers le haut">
+    </a>
+</div>
 </main >
 <footer id="page_down">
 

@@ -11,8 +11,8 @@
     
 </head>
 
-<body>
-    <header id="page_up">
+<body id="page_up">
+    <header>
         <nav></nav>
         <div class="banner">
             <a href="index.php">
@@ -28,10 +28,10 @@
         </div>
     </header>
 <?php
-echo $_COOKIE['prev'];
 ?>
-<a class="page_up" href="#page_down">
-
-    <img src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
-</a>
+<div class="page_up">
+    <a href="#page_down">
+        <img  src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
+    </a>
+</div>
 <main >

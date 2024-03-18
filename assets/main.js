@@ -11,7 +11,6 @@ function maj() {
 function changeUserGroup() {
     //les espaces et accent sont transformés dans le cookie, decode uri component permet de retrouver quelchose de lisible
     var nomFr = decodeURIComponent(getCookie('userGroup'));
-    console.log(nomFr);
     document.querySelector('#userGroup').innerText = nomFr;
 }
 function selectGroup() {

@@ -19,10 +19,8 @@ form.addEventListener("submit", (event) => {
             alert ("Attention vous avez mis une date de fin antérieur à celle du début !")
         } else if (date_end.value){  //verifie s'il y a une date de fin, sinon on la fixe avant l'envoi
                 form.submit(); // Soumet le formulaire
-                console.log('tout est bon ... envoi')
                 } else {
                 date_end.value = date_start.value
                 form.submit(); // Soumet le formulaire
-                console.log("pas de date-fin on la fixe au début")
             }
 });
