@@ -29,7 +29,6 @@ $req->execute();
 $resultat = $req->fetch();
 
 echo '<div class="annonce detail '.$resultat["groupe"].'">';
-            
     echo '<p class = "annonce_group">Groupe : ' . $resultat["groupe"] . '</p>';
     echo '<p class = "annonce_titre">Titre : ' . $resultat["titre"] . '</p>';
     echo '<p class = "annonce_lib">Libellé : ';

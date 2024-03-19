@@ -16,12 +16,7 @@ if (!empty($_POST['groupListe'])) {
 
 include("header.php");
 include("login_option.php");
-?>
 
-<a class="button" href="login_annonce.php">Ajouter annonce</a> 
-
-
-<?php
 // Récupération de la liste des groupes dans la base de donnée
 include ("db.php");
 $sql = "SELECT lib_dom FROM domaines WHERE lib_dom != 'Général' ORDER BY lib_dom ASC";
@@ -34,7 +29,7 @@ $req->execute();
     <div class="groupe_menu">
         <form  action="" id="groupForm" method="post">
             <select class="item_menu" name="groupListe" id="groupListe" size ="30" onchange="maj();">
-                <option value="">-- Veuillez choisir un groupe --</option>
+                <option value="">-- Choisir un groupe --</option>
                 <option value="Général" selected>Général </option>
                 <?php while ($row = $req->fetch()) { ?>
                     <option value="<?php echo $row['lib_dom']; ?>" 
@@ -89,6 +84,8 @@ $req->execute();
         ?>
     </div>
 </div>
+
+<a class="button" href="login_annonce.php">Ajouter annonce</a> 
 
 <?php
 include("footer.php");
