@@ -1,5 +1,4 @@
 <?php
-    // $prev_page = $_COOKIE['prev'];
     $prev_page = "index.php";
 
 include("header.php");
@@ -15,14 +14,13 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
 <div class="log_status">
     <?php
     if ($user): ?>
-    
     <p>Bonjour <?= htmlentities($user) ?> Vous êtes arrivé ici par erreur ?</p>
     <a href="logout.php?action=deconnecter">Se déconnecter</a><br>
     <?php else: ?>
+        <a class="button" href="login.php">Se Connecter</a><br>
         <p class="log_mes">Vous êtes déconnecté(e) !</p>
         <?php endif;?>
-        
-        <!-- <a class="button" href="login.php">Se Connecter</a><br> -->
+
 </div>
 
 <?php

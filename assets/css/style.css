@@ -1,7 +1,3 @@
-/* @media (max-width: 768px) {
-
-    }
-  } */
 *{
     /* box-shadow: 0 0 0 1px rgb(105, 103, 103) inset; */
     scroll-behavior: smooth;
@@ -178,4 +174,9 @@ fieldset{
 .comm_auteur {
     text-align-last: right;
     /* margin-top: 0; */
+}
+
+.test {
+    color: rgb(138, 20, 20);
+    background-color: #0000ff;
 }

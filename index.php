@@ -32,7 +32,6 @@ $req->execute();
 <div class="container">
 
     <div class="groupe_menu">
-
         <form  action="" id="groupForm" method="post">
             <select class="item_menu" name="groupListe" id="groupListe" size ="30" onchange="maj();">
                 <option value="">-- Veuillez choisir un groupe --</option>

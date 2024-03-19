@@ -15,27 +15,26 @@ if (!empty($_POST['nom'])) {
 
 }
 
+include ("db.php");
 include("header.php");
 
 if ($user): ?>
 <div class="log_status">
-    
     <p class="user_login"><?= htmlentities($user) ?></p>
     <a class="button" href="logout.php?action=deconnecter">Se déconnecter</a><br>
     <p class="log_mes"> Vous êtes connecté(e) !</p>
-    
 </div>
 
 <?php else: 
-    include ("db.php");
-    $sql = "SELECT nom, pnom FROM benevoles ORDER BY nom";
+    $sql = "SELECT id_bnv, nom, pnom FROM benevoles ORDER BY nom";
     $req = $db->prepare($sql);
     $req->execute();
     ?>
     <div class="log_mes">
     <form class="formulaire" action="" method="POST">
         <select class="item_menu" name="nom" required>
-            <option selected>Selectionnez votre nom</option>
+            <option selected disabled>Selectionnez votre nom</option>
+            
 
             <?php while ($row = $req->fetch()) { ?>
                 <option value="<?php echo $row['nom']." ".$row["pnom"]; ?>" 
@@ -44,7 +43,7 @@ if ($user): ?>
             <?php } ?>
         </select>
         
-        <input class="item_menu" type="date" name="dt_nais" placeholder="Votre date de naissance"  />
+        <input class="item_menu" type="date" name="dt_nais" placeholder="Votre date de naissance"  selected/>
         <!-- ajouter required -->
         <br><br>
         <input class="button btn_valid" type="submit" value="Connexion">
@@ -52,6 +51,8 @@ if ($user): ?>
 </form>
 </div>
 <?php
+
+
 echo '<div class="center_btn">';
     echo '<a class="button" href="'.$prev_page.'">Retour</a>';
 echo '</div>';

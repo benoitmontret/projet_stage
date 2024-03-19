@@ -19,9 +19,6 @@ function selectGroup() {
     return valeur;
 }
 
-// function getGroup() {
-//     return localStorage.getItem('userGroup');
-// }
 
 function getCookie(cookieName) {
     let cookies = document.cookie.split(';');
