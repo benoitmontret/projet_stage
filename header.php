@@ -13,14 +13,15 @@
 
 <body id="page_up">
     <header>
-        <nav></nav>
         <div class="banner">
-            <a href="index.php">
-                <img class="logo" src="./assets/img/logosp.png " alt="spf 76">
-                <img src="./assets/img/echo.svg" alt="echo">
-            </a>
+            <div class="logo_home">
+                <a href="index.php">
+                    <img class="logo" src="./assets/img/logosp.png " alt="spf 76">
+                    <img class="logo" src="./assets/img/echo.png" alt="echo">
+                </a>
+            </div>
             <div class="title_header">
-            <img class="logo-echo" src="./assets/img/echo.svg" alt="echo">
+            <img class="logo-echo" src="./assets/img/echo.png" alt="echo">
             <p class="title-echo">Espace de Communication pour l'Harmonisation de l'Oraganisation</p> 
                 <p>Secours Populaire Français Le Havre</p>
             </div>

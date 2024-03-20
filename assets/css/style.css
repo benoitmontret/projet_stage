@@ -17,7 +17,7 @@ header {
     position: sticky;
     top: 0px;
     height: 180px;
-    background-color: white;
+    background-color: #ccc;
     border-bottom: solid 2px black;
 }
 footer {
@@ -27,28 +27,29 @@ footer {
     padding: 8px;
     height: 100px;
 }
-img {
-    background-color: white;
-}
 h2{
     text-align: center;
 }
 .page_down, .page_up {
     display: flex;
     justify-content: end;
+    position: sticky;
+}
+.page_down img, .page_up img {
+    background-color: white;
 }
 .page_up {
-    position: sticky;
     top: 182px;
 }
 .page_down {
-    position: sticky;
     bottom: 0px;
 }
-
-.logo {
-    height: 100px;
-    width: auto;
+.logo_home {
+    width: 100px;
+}
+.logo_home img {
+    width: 100%;
+    height: auto;
     padding-bottom: 5px;
 }
 .logo-echo {
