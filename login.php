@@ -22,19 +22,16 @@ if (!empty($_POST['nom'])) {
         $req -> bindvalue(1,$res[1],PDO::PARAM_INT);
         $req->execute();
         $resultat= $req->fetch();
-    // echo $resultat[0].'<br>'.$_POST['dt_nais'];
     if ($resultat[0]!=$_POST['dt_nais']) {
         $err_message = '<p class="log_err">Erreur : Le nom et la date de naissance ne correspondent pas !!!</p>';
     } else {
-
-        // echo "nom: ". $res[0]."<br />";
-        // echo "id: ". $res[1]."<br />";
-        setcookie('user', $res[0], time()+3600); //3600=1h modifier selon besoin
+        setcookie('user', $res[0], time()+3600); //3600=1h modifier selon besoin, retient le cookie quand le navigateur est fermé, si l'on veut une deco avce la fermeture du navigateur il faut le set à 0
         // setcookie('user_id',$res[1], time()+3600); //si necessaire stock l'id, retirer aussi le commentaire ligne 10-11 pour l'unset
         $user=$res[0];
     }
 }
 include("header.php");
+
 if ($err_message) {
     echo $err_message;
 }
@@ -52,8 +49,8 @@ if ($user): ?>
     $req->execute();
 ?>
 
-    <div class="log_mes">
-        <form class="formulaire" action="" method="POST">
+    <div class="formulaire">
+        <form action="" method="POST">
             <fieldset>
                 <div class="log_form">
                     <div>
@@ -73,7 +70,9 @@ if ($user): ?>
                     </div>
                 </div>
                 <br>
-                <input class="button btn_valid" type="submit" value="Connexion">
+                <div class="center_btn">
+                    <input class="button btn_valid" type="submit" value="Connexion">
+                </div>
                 <?php endif;?> 
             </fieldset>
         </form>
