@@ -1,6 +1,7 @@
 * {
-  /* box-shadow: 0 0 0 1px rgb(105, 103, 103) inset; */
-    scroll-behavior: smooth;
+  /* box-shadow: 0 0 0 1px #ff0000 inset; */
+box-sizing: border-box;
+scroll-behavior: smooth;
 }
 html, body {
     height: 100vh;
@@ -30,12 +31,15 @@ footer {
 h2{
     text-align: center;
 }
+
+/* fleche haut bas */
 .page_down, .page_up {
     display: flex;
     justify-content: end;
     position: sticky;
 }
 .page_down img, .page_up img {
+    width: 2rem;
     background-color: white;
 }
 .page_up {
@@ -44,8 +48,11 @@ h2{
 .page_down {
     bottom: 0px;
 }
+
+/* banniere et logo */
 .logo_home {
     width: 100px;
+    flex: none;
 }
 .logo_home img {
     width: 100%;
@@ -64,6 +71,7 @@ h2{
     font-size: 0.6rem;
 }
 .userGroup {
+    width: 30%;
     min-width: 250px;
     text-align: center;
 }
@@ -72,6 +80,8 @@ h2{
     justify-content: space-between;
     margin: 1rem;
 }
+
+/* page connexion */
 .log_status {
     font-size: 0.75rem;
     margin-right: 100px;
@@ -94,6 +104,8 @@ h2{
     color: red;
     font-weight: bold;
 }
+
+/* bouton */
 .button {
     text-decoration: none;
     font-size: 1em;
@@ -119,16 +131,17 @@ h2{
     background-color: #005000;
 }
 
+/* affichage principal */
 .container {
     display: grid;
     grid-template-columns: 1fr 350px;
 }
 .groupe_menu {
     order: 2;
-    margin: 0 auto;
+    margin: 1em auto;
 }
 
-
+/* les formulaires  */
 .formulaire {
     display: flex;
     justify-content: center;
@@ -176,8 +189,20 @@ fieldset {
     font-size: 0.7rem;
     color: #999;
 }
+/* formulaire de login */
+.log_form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    text-align: left;
+}
+.log_nom {
+    width: 90%;
+}
+.log_date {
+    width: 100%;
+}
 
-
+/* affichage des annonces */
 .liste_annonce {
     order: 1;
     margin: 0 auto;
@@ -193,7 +218,7 @@ fieldset {
     border: solid #0000ff;
     order: 1;
 }
-
+/* affichage 1 annonce et commentaire */
 .detail {
     width: 80%;
     margin: auto;
@@ -210,14 +235,15 @@ fieldset {
 .comm_auteur {
     text-align-last: right;
 }
-.log_form {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    text-align: left;
-}
-.log_nom {
-    width: 90%;
-}
-.log_date {
-    width: 100%;
+
+
+
+@media (max-width: 900px) { 
+    html, body {
+        font-size: 20px;
+    }
+    .title_header {
+        background-color: #ff0;
+        visibility: hidden;
+    }
 }

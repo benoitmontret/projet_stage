@@ -1,7 +1,6 @@
 <?php
 $user = null;
 $err_message= null;
-
 $prev_page = $_COOKIE['prev'];
 include ("db.php");
 
@@ -39,8 +38,9 @@ if ($err_message) {
 if ($user): ?>
 <div class="log_status">
     <p class="user_login"><?= htmlentities($user) ?></p>
-    <a class="button" href="logout.php?action=deconnecter">Se déconnecter</a><br>
+    <a class="button" href="logout.php?action=deconnecter">Se déconnecter</a>
     <p class="log_mes"> Vous êtes connecté(e) !</p>
+
 </div>
 
 <?php else: 

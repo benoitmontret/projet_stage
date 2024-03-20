@@ -82,10 +82,12 @@ $req->execute();
             echo "</div>";
         }
         ?>
+        <div class="center_btn">
+            <a class="button" href="login_annonce.php">Ajouter annonce</a> 
+        </div>
     </div>
 </div>
 
-<a class="button" href="login_annonce.php">Ajouter annonce</a> 
 
 <?php
 include("footer.php");
