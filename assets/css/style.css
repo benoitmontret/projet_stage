@@ -16,6 +16,7 @@ body {
 }
 header {
     position: sticky;
+    margin-bottom: auto;
     top: 0px;
     height: 180px;
     background-color: #ccc;
@@ -75,7 +76,7 @@ h2{
 .userGroup {
     width: 30%;
     min-width: 250px;
-    text-align: center;
+    text-align: end;
 }
 .banner {
     display: flex;
@@ -185,7 +186,7 @@ fieldset {
 }
 .context_fin {
     font-size: 0.8rem;
-    color: #999;
+    color: #777;
 }
 .mandatory {
     font-size: 0.7rem;
@@ -247,6 +248,9 @@ fieldset {
     font-size: 0.8em;
     margin: 0;
 }
+.annonce_auteur {
+    font-style: italic;
+}
 .annonce_nbcom {
     margin: 0;
     color: #999;
@@ -264,14 +268,15 @@ fieldset {
 .commentaire {
     margin: 0px 20px 5px;
     padding: 0px 20px;
-    background-color: #e0e0e0;
+    background-color: #ddd;
     border-radius: 15px;
 }
 .comm_item {
     font-style: italic;
+    margin-bottom: 0;
 }
-.comm_auteur {
-    text-align-last: right;
+.commentaire .date_auteur {
+    color: #888;
 }
 
 

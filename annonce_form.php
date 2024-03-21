@@ -47,13 +47,16 @@ $req->execute();
         <div class="form_date">
 
             <div>
-                <label for="date_start">Début d'affichage* :</label>
+                <label for="date_start">Début * :</label>
                 <input class="item_menu" type="date" name="date_start" id="date_start" required = "required"/>
             </div>
             <div>
-                <label for="date_end">Fin d'affichage :</label>
+                <label for="date_end">Fin :</label>
                 <input class="item_menu" type="date" name="date_end" id="date_end" />
-                <p class="context_fin">S'il n'y a pas de date de fin de définit, elle sera fixée à la même date que celle du début.</p>
+                <div class="context_fin">
+                    <p>Attention : La date de fin correspond aussi à la fin de l'affichage sur la page principale.</p>
+                    <p> Et si elle n'est pas définit, elle sera fixée à la même date que celle du début.</p>
+                </div>
             </div>
         </div>
         <p class="mandatory">* Champs obligatoires</p>

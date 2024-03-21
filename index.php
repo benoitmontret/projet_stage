@@ -1,7 +1,7 @@
 <?php
 $userGroup = null;
 setcookie('prev','index.php');
-//s'il existe un cookie on definit le groupe avec, sinon on le fixe à Pour tous
+//s'il existe un cookie on definit le groupe avec, sinon on le fixe à "Pour tous"
 if (!empty($_COOKIE['userGroup'])) {
     $userGroup = $_COOKIE['userGroup'];
 } else {
@@ -16,6 +16,10 @@ if (!empty($_POST['groupListe'])) {
 
 include("header.php");
 include("login_option.php");
+// refresh auto
+$delai = 30*5; 
+$url = 'index.php';
+header("Refresh: $delai;url=$url");
 
 // Récupération de la liste des groupes dans la base de donnée
 include ("db.php");
@@ -69,7 +73,7 @@ $req->execute();
                     }
                 echo '</p>';
             echo '<div class="date_auteur">';
-                echo '<p class="annonce_date">Affiché du : ' . date("d/m/Y",strtotime($row["date_debut"])) . ' au : ' . date("d/m/Y",strtotime($row["date_fin"])).'</p>';
+                echo '<p class="annonce_date">Du : ' . date("d/m/Y",strtotime($row["date_debut"])) . ' au : ' . date("d/m/Y",strtotime($row["date_fin"])).'</p>';
                 echo '<p class = "annonce_auteur">'.$row["auteur"].'</p>';
             echo '</div>';
                 echo '<p class="annonce_nbcom">Il y a '.$row['nb_comm'].' commentaires. ';
@@ -88,7 +92,7 @@ $req->execute();
         }
         ?>
         <div class="center_btn">
-            <a class="button" href="login_annonce.php">Ajouter annonce</a> 
+            <a class="button" href="login_annonce.php">Ajouter une annonce</a> 
         </div>
     </div>
 </div>

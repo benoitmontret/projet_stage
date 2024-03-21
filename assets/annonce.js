@@ -24,3 +24,7 @@ form.addEventListener("submit", (event) => {
                 form.submit(); // Soumet le formulaire
             }
 });
+
+date_start.addEventListener("change", function() {
+    date_end.value = date_start.value;
+});

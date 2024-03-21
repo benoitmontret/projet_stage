@@ -18,7 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql2="UPDATE annonce SET nb_comm = nb_comm +1 WHERE id_annonce = $id_annonce";
     $req2=$db->prepare($sql2);
     $req2->execute();
+    // On recharge la page sans le POST pour eviter le renvoie des donnée si on raffraichi la page plutard
+    $url = 'detail_annonce.php?id='.$_GET['id'];
+    header("Refresh: 0 ;url=$url");
 }
+// refresh auto Pose un pb avec le formulaire qui s'efface
+// $delai = 10; 
+// $url = 'detail_annonce.php?id='.$_GET['id'];
+// header("Refresh: $delai;url=$url");
 
 $now=time();
 $id=$_GET['id'];
@@ -41,8 +48,8 @@ echo '<div class="annonce detail '.$resultat["groupe"].'">';
         }
     echo '</p>';
     echo '<div class="date_auteur">';
-        echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'</p>';
-        echo '<p class = "annonce_auteur">Auteur : '.$resultat["auteur"].'</p>';
+        echo '<p class="annonce_date">Du : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Au : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'</p>';
+        echo '<p class = "annonce_auteur">'.$resultat["auteur"].'</p>';
     echo '</div>';
         $sql2="SELECT comm, auteur_comm, date_post FROM comm_annonce WHERE id_annonce=? ORDER BY id_comm ASC";
         $req = $db->prepare($sql2);
@@ -52,7 +59,8 @@ echo '<div class="annonce detail '.$resultat["groupe"].'">';
             while ($row = $req->fetch()) { 
                     echo '<div class="commentaire">';
                         echo '<p class="comm_item">'.$row["comm"].'</p> ';
-                        echo '<p class="interval">Posté il y a : ';
+                        echo '<div class="date_auteur">';
+                            echo '<p class="interval">Posté il y a : ';
                             $delay= $now-strtotime($row["date_post"]);
                             // Convertir la différence en jours, heures, minutes et secondes
                             $jours = floor($delay / (60 * 60 * 24));
@@ -60,7 +68,8 @@ echo '<div class="annonce detail '.$resultat["groupe"].'">';
                             $minutes = floor(($delay % (60 * 60)) / 60);
                             $res = (($jours >0) ? $jours." jour(s) " : "") . (($heures >0) ? $heures." heures " : "") . $minutes." minutes</p>"; 
                             echo $res;
-                        echo '<p class="comm_auteur">'.$row["auteur_comm"].'</p> ';
+                            echo '<p class="comm_auteur">'.$row["auteur_comm"].'</p> ';
+                        echo '</div>';
                     echo '</div>';
                 };
             } else {
