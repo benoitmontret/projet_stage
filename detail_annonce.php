@@ -29,18 +29,21 @@ $req->execute();
 $resultat = $req->fetch();
 
 echo '<div class="annonce detail '.$resultat["groupe"].'">';
-    echo '<p class = "annonce_group">Groupe : ' . $resultat["groupe"] . '</p>';
-    echo '<p class = "annonce_titre">Titre : ' . $resultat["titre"] . '</p>';
-    echo '<p class = "annonce_lib">Libellé : ';
+    echo '<div class="annonce_head">';
+    echo '<p class = "annonce_titre">' . $resultat["titre"] . '</p>';
+    echo '<p class = "annonce_group">' . $resultat["groupe"] . '</p>';
+    echo '</div>';
+    echo '<p class = "annonce_lib">';
         if ($resultat["libelle"]) {
             echo $resultat["libelle"];
         } else {
             echo 'Aucune description';
         }
     echo '</p>';
-    echo '<p class = "annonce_auteur">Auteur : '.$resultat["auteur"].'</p>';
-    echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'</p>';
-
+    echo '<div class="date_auteur">';
+        echo '<p class="annonce_date">Date de début : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Date de fin : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'</p>';
+        echo '<p class = "annonce_auteur">Auteur : '.$resultat["auteur"].'</p>';
+    echo '</div>';
         $sql2="SELECT comm, auteur_comm, date_post FROM comm_annonce WHERE id_annonce=? ORDER BY id_comm ASC";
         $req = $db->prepare($sql2);
         $req->bindvalue(1, $id, PDO::PARAM_INT);

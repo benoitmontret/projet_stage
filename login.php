@@ -7,15 +7,15 @@ include ("db.php");
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['user']);
     setcookie('user', '', time()-10);
-    // unset($_COOKIE['user_id']);
-    // setcookie('user_id', '', time()-10);
+    unset($_COOKIE['user_id']);
+    setcookie('user_id', '', time()-10);
 
 }
 if (!empty($_COOKIE['user'])) {
     $user = $_COOKIE['user'];
 }
 if (!empty($_POST['nom'])) {
-    $res = explode('|', $_POST['nom']); //$rres[0] contient le nom+prenom, res[1] l'id bénévol
+    $res = explode('|', $_POST['nom']); //$res[0] contient le nom+prenom, res[1] l'id bénévol
     $sql = "SELECT dt_nais FROM benevoles WHERE id_bnv=?";
         $req = $db->prepare($sql);
         $req -> bindvalue(1,$res[1],PDO::PARAM_INT);
@@ -24,8 +24,8 @@ if (!empty($_POST['nom'])) {
     if ($resultat[0]!=$_POST['dt_nais']) {
         $err_message = '<p class="log_err">Erreur : Le nom et la date de naissance ne correspondent pas !!!</p>';
     } else {
-        setcookie('user', $res[0], time()+3600); //3600=1h modifier selon besoin, retient le cookie quand le navigateur est fermé, si l'on veut une deco avce la fermeture du navigateur il faut le set à 0
-        // setcookie('user_id',$res[1], time()+3600); //si necessaire stock l'id, retirer aussi le commentaire ligne 10-11 pour l'unset
+        setcookie('user', $res[0], 0); //3600=1h modifier selon besoin, retient le cookie quand le navigateur est fermé, si l'on veut une deco avec la fermeture du navigateur il faut le set à 0
+        setcookie('user_id',$res[1], 0); //si necessaire stock l'id, retirer aussi le commentaire ligne 10-11 pour l'unset
         $user=$res[0];
     }
 }

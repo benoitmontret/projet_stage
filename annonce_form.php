@@ -14,7 +14,7 @@ include("login_option.php");
 <?php
 // Récupération de la liste des groupes dans la base de donnée
 include ("db.php");
-$sql = "SELECT lib_dom FROM domaines WHERE lib_dom != 'Général' ORDER BY lib_dom ASC";
+$sql = "SELECT lib_dom FROM domaines WHERE lib_dom != 'Pour tous' ORDER BY lib_dom ASC";
 $req = $db->prepare($sql);
 $req->execute();
 ?>
@@ -30,7 +30,7 @@ $req->execute();
             </div>
             <select class="item_menu" name="Groupe">
                 <option value="">-- Veuillez choisir un groupe --</option>
-                <option value="Général" selected>Général </option>
+                <option value="Pour tous" selected>Pour tous </option>
                 
                 <?php while ($row = $req->fetch()) { ?>
                     <option value="<?php echo $row['lib_dom']; ?>" 
@@ -47,11 +47,11 @@ $req->execute();
         <div class="form_date">
 
             <div>
-                <label for="date_start">Date de début* :</label>
+                <label for="date_start">Début d'affichage* :</label>
                 <input class="item_menu" type="date" name="date_start" id="date_start" required = "required"/>
             </div>
             <div>
-                <label for="date_end">Date de fin :</label>
+                <label for="date_end">Fin d'affichage :</label>
                 <input class="item_menu" type="date" name="date_end" id="date_end" />
                 <p class="context_fin">S'il n'y a pas de date de fin de définit, elle sera fixée à la même date que celle du début.</p>
             </div>

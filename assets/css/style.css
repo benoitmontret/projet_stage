@@ -8,7 +8,7 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: "Gill Sans MT", "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
-    font-size: 24px;
+    font-size: 26px;
 }
 body {
     display: flex;
@@ -65,10 +65,12 @@ h2{
 .title_header {
     text-align: center;
     font-weight: bold;
-    width: 500px;
+    width: 600px;
 }
 .title-echo {
     font-size: 0.6rem;
+    margin: 0;
+    padding: 0.5em;
 }
 .userGroup {
     width: 30%;
@@ -209,14 +211,50 @@ fieldset {
     width: 95%;
 }
 .annonce {
-    border: 3px solid #008000;
+    border: 4px solid #008000;
     border-radius: 70px;
-    padding: 2rem;
+    padding: 1em;
     margin-bottom: 1rem;
+
 }
-.Général {
-    border: solid #0000ff;
+.tous {
+    border: 4px solid #0000ff;
     order: 1;
+}
+.annonce_head {
+    display: flex;
+    justify-content: space-between;
+}
+.annonce_titre, .annonce_group {
+    font-weight: bold;
+}
+.annonce_titre, .annonce_group, .annonce_date, .annonce_auteur {
+    margin: 0.6em;
+}
+.annonce_lib {
+    margin: 0 ;
+}
+.annonce_titre {
+    font-style: italic;
+}
+
+.annonce_troncature {
+    color: #999;
+}
+.date_auteur {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    margin: 0;
+}
+.annonce_nbcom {
+    margin: 0;
+    color: #999;
+    font-size: .8em;
+}
+.btn_plus {
+    display: flex;
+    justify-content: end;
 }
 /* affichage 1 annonce et commentaire */
 .detail {
@@ -238,7 +276,7 @@ fieldset {
 
 
 
-@media (max-width: 900px) { 
+@media (max-width: 920px) { 
     html, body {
         font-size: 20px;
     }
