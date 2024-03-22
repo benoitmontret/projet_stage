@@ -1,17 +1,6 @@
 <?php
 setcookie('prev','detail_annonce.php?id='.$_GET['id']);
 
-include("header.php");
-?>
-
-<div class="page_up">
-    <a href="#page_down">
-        <img  src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
-    </a>
-</div>
-
-<?php
-include("login_option.php");
 include ("db.php");
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id_annonce=$_POST["id_annonce"];
@@ -22,16 +11,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $req->bindvalue(1,nl2br($comm),PDO::PARAM_STR);
     $req->bindvalue(2,$auteur_comm,PDO::PARAM_STR);
     $req->bindvalue(3,$id_annonce,PDO::PARAM_STR);
-
+    
     $req->execute();
     $sql2="UPDATE annonce SET nb_comm = nb_comm +1 WHERE id_annonce = $id_annonce";
     $req2=$db->prepare($sql2);
     $req2->execute();
     // On recharge la page sans le POST pour eviter le renvoie des donnée si on raffraichi la page plutard
-    //ne marche pas sous firefox ?
     $url = 'detail_annonce.php?id='.$_GET['id'];
-    header("Refresh: 0 ;url=$url");
+    $delai = 0;
+    header("Refresh: $delai;url=$url");
 }
+
+include("header.php");
+?>
+
+<div class="page_up">
+    <a href="#page_down">
+        <img  src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
+    </a>
+</div>
+
+<?php
+    include("login_option.php");
+
+
+
 // refresh auto Pose un pb avec le formulaire qui s'efface
 // $delai = 10; 
 // $url = 'detail_annonce.php?id='.$_GET['id'];
