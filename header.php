@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Echo - SPF76</title>
+    <title>Echo - spf76</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
@@ -28,11 +28,5 @@
             <h2 class="userGroup" id="userGroup">GROUP</h2>
         </div>
     </header>
-<?php
-?>
-<!-- <div class="page_up">
-    <a href="#page_down">
-        <img  src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
-    </a>
-</div> -->
+
 <main >

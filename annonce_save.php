@@ -1,8 +1,7 @@
 <?php
-$prev_page = $_COOKIE['prev'];
+// $prev_page = $_COOKIE['prev'];
 include("header.php");
 include("login_option.php");
-
 
 $titre=$_POST["titre"];
 $libelle=$_POST["libelle"];
@@ -20,7 +19,6 @@ $sql='INSERT INTO annonce (titre,libelle,groupe,date_debut,date_fin,auteur) valu
     $req->bindvalue(4,$date_start,PDO::PARAM_STR);
     $req->bindvalue(5,$date_end,PDO::PARAM_STR);
     $req->bindvalue(6,$auteur,PDO::PARAM_STR);
-    
 
     if ($req->execute()) {
 

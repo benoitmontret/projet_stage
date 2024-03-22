@@ -30,7 +30,7 @@ include("login_option.php");
 // refresh auto
 $delai = 60*5; 
 $url = 'index.php';
-header("Refresh: $delai;url=$url");
+// header("Refresh: $delai;url=$url");
 
 // Récupération de la liste des groupes dans la base de donnée
 include ("db.php");
@@ -43,7 +43,7 @@ $req->execute();
 
     <div class="groupe_menu">
         <form  action="" id="groupForm" method="post">
-            <select class="item_menu" name="groupListe" id="groupListe" size ="30" onchange="maj();">
+            <select class="item_menu" name="groupListe" id="groupListe" size="30" onchange="maj();">
                 <option value="">-- Choisir un groupe --</option>
                 <option value="Pour tous" selected>Pour tous </option>
                 <?php while ($row = $req->fetch()) { ?>

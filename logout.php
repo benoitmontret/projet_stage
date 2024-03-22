@@ -1,5 +1,5 @@
 <?php
-    $prev_page = "index.php";
+    // $prev_page = "index.php";
 
 include("header.php");
 
@@ -25,7 +25,7 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
 
 <?php
 echo '<div class="center_btn">';
-echo '<a class="button" href="'.$prev_page.'">Retour</a>';
+echo '<a class="button" href="index.php">Retour</a>';
 echo '</div>';
 include("footer.php");
 ?>

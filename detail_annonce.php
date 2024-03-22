@@ -18,8 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $req2->execute();
     // On recharge la page sans le POST pour eviter le renvoie des donnée si on raffraichi la page plutard
     $url = 'detail_annonce.php?id='.$_GET['id'];
-    $delai = 0;
-    header("Refresh: $delai;url=$url");
+    header("Refresh: 0 ;url=$url");
 }
 
 include("header.php");
