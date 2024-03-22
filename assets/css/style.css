@@ -4,11 +4,11 @@ box-sizing: border-box;
 scroll-behavior: smooth;
 }
 html, body {
-    height: 100vh;
-    padding: 0;
-    margin: 0;
     font-family: "Gill Sans MT", "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
     font-size: 26px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
 body {
     display: flex;
@@ -45,9 +45,11 @@ h2{
 }
 .page_up {
     top: 182px;
+    /* margin-bottom: auto; */
 }
 .page_down {
-    bottom: 0px;
+    /* bottom: 0px; */
+    margin-top: auto;
 }
 
 /* banniere et logo */
@@ -74,8 +76,9 @@ h2{
     padding: 0.5em;
 }
 .userGroup {
-    width: 30%;
+    /* width: 30%; */
     min-width: 250px;
+    max-width: 400px;
     text-align: end;
 }
 .banner {
@@ -278,7 +281,12 @@ fieldset {
 .commentaire .date_auteur {
     color: #888;
 }
-
+.succes {
+    text-align: center;
+    font-size: 0.9rem;
+    color: green;
+    font-weight: bold;
+}
 
 
 @media (max-width: 920px) { 

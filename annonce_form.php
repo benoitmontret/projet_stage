@@ -29,7 +29,7 @@ $req->execute();
                 maxlength="255" minlength="2" placeholder="Donnez un titre ou une description courte pour l'annonce" autofocus = true required = "required">
             </div>
             <select class="item_menu" name="Groupe">
-                <option value="">-- Veuillez choisir un groupe --</option>
+                <option disabled value="">-- Veuillez choisir un groupe --</option>
                 <option value="Pour tous" selected>Pour tous </option>
                 
                 <?php while ($row = $req->fetch()) { ?>
@@ -42,7 +42,7 @@ $req->execute();
         </div>
         <br>
         <label class="item_menu" for="libelle">Details :</label><br>
-        <textarea name="libelle" id="libelle"  rows="5" placeholder="Entrez les détails de l'annonce ici"></textarea>
+        <textarea name="libelle" id="libelle"  rows="4" placeholder="Entrez les détails de l'annonce ici"></textarea>
         <br><br>
         <div class="form_date">
 

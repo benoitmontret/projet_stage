@@ -30,9 +30,9 @@
     </header>
 <?php
 ?>
-<div class="page_up">
+<!-- <div class="page_up">
     <a href="#page_down">
         <img  src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
     </a>
-</div>
+</div> -->
 <main >

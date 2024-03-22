@@ -15,9 +15,20 @@ if (!empty($_POST['groupListe'])) {
 }
 
 include("header.php");
+?>
+
+<div class="page_up">
+    <a href="#page_down">
+        <img  src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
+    </a>
+</div>
+
+<?php
 include("login_option.php");
+
+
 // refresh auto
-$delai = 30*5; 
+$delai = 60*5; 
 $url = 'index.php';
 header("Refresh: $delai;url=$url");
 
@@ -54,7 +65,7 @@ $req->execute();
         $req->bindvalue(1, $now, PDO::PARAM_STR);
         $req->bindvalue(2, $userGroup, PDO::PARAM_STR);
         $req->execute();
-        $max=200; //limite pour le libellé
+        $max=150; //limite pour le libellé
         $now=time();
         while ($row = $req->fetch()) { 
             echo '<div class="annonce '.$row["groupe"].'">';
@@ -97,6 +108,11 @@ $req->execute();
     </div>
 </div>
 
+<div class="page_down">
+    <a  href="#page_up">
+        <img src="./assets/img/arrow-up.svg" alt="fleche vers le haut">
+    </a>
+</div>
 
 <?php
 include("footer.php");

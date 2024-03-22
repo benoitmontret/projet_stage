@@ -1,8 +1,8 @@
-<div class="page_down">
+<!-- <div class="page_down">
     <a  href="#page_up">
         <img src="./assets/img/arrow-up.svg" alt="fleche vers le haut">
     </a>
-</div>
+</div> -->
 </main >
 <footer id="page_down">
 

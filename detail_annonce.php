@@ -2,6 +2,15 @@
 setcookie('prev','detail_annonce.php?id='.$_GET['id']);
 
 include("header.php");
+?>
+
+<div class="page_up">
+    <a href="#page_down">
+        <img  src="./assets/img/arrow-down.svg" alt="fleche vers le bas">
+    </a>
+</div>
+
+<?php
 include("login_option.php");
 include ("db.php");
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -10,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $auteur_comm=$_POST["auteur_comm"];
     $sql='INSERT into comm_annonce (comm,auteur_comm,id_annonce) values (?,?,?)';
     $req=$db->prepare($sql);
-    $req->bindvalue(1,$comm,PDO::PARAM_STR);
+    $req->bindvalue(1,nl2br($comm),PDO::PARAM_STR);
     $req->bindvalue(2,$auteur_comm,PDO::PARAM_STR);
     $req->bindvalue(3,$id_annonce,PDO::PARAM_STR);
 
@@ -19,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $req2=$db->prepare($sql2);
     $req2->execute();
     // On recharge la page sans le POST pour eviter le renvoie des donnée si on raffraichi la page plutard
+    //ne marche pas sous firefox ?
     $url = 'detail_annonce.php?id='.$_GET['id'];
     header("Refresh: 0 ;url=$url");
 }
@@ -85,7 +95,7 @@ echo "</div><br>";
         <fieldset> <!-- encadrement -->
         <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de facon invisible -->
         <label class="item_menu" for="comm">Commentaire* :</label><br>
-        <textarea name="comm" id="comm" cols="100" rows="5" placeholder="Laissez votre commentaire ici"  required = "required"></textarea>
+        <textarea name="comm" id="comm" cols="100" rows="3" placeholder="Laissez votre commentaire ici"  required = "required"></textarea>
         <br><br>
         <label for="auteur_comm">Votre nom* :</label> 
         <input class="item_menu" type="text" name="auteur_comm" id="auteur_comm" size="50"
@@ -110,5 +120,14 @@ echo "</div><br>";
 echo '<div class="center_btn">';
     echo '<a class="button" href="index.php">Retour</a>';
 echo '</div>';
+?>
+
+<div class="page_down">
+    <a  href="#page_up">
+        <img src="./assets/img/arrow-up.svg" alt="fleche vers le haut">
+    </a>
+</div>
+
+<?php
 include("footer.php");
 ?>
