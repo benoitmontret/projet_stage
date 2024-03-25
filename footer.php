@@ -1,6 +1,28 @@
+
+
+</main >
+<footer id="page_down">
+
+    <h4>Echo : Espace de communication pour harmoniser l'organisation</h4>
+    <a href="#cookie">Cookies</a>
+    <a href="#contact">Contact</a>
+    <a href="">Aide</a>
+</footer>
+</body>
+
+<div id="contact" class="modal">
+    <div class="modal_content">
+        <a class="modal_close" href="#"><img class="logo" src="./assets/img/close_cross.svg" alt=""></a>
+        <h2>Contact</h2>
+        <p>Pour toutes questions ou problèmes techniques veuillez contacter Patrick Andrieu par :</p>
+            <p>mail : <a href="mailto:pat.andrieu@gmail.com">pat.andrieu@gmail.com</a></p>  
+            <p>téléphone : 07 67 63 13 92</p>
+    </div>
+</div>
+
 <div id="cookie" class="modal">
     <div class="modal_content">
-        <a class="modal_close" href="#">❎</a>
+        <a class="modal_close" href="#"><img class="logo" src="./assets/img/close_cross.svg" alt=""></a>
         <h1>Utilisation des cookies dans notre application ECHO à usage interne</h1>
 
         <h2>Introduction</h2>
@@ -31,17 +53,9 @@
 
         <h2>Contact</h2>
         <p>Si vous avez des questions sur l'utilisation des cookies dans notre application, veuillez nous contacter à l'adresse suivante : pat.andrieu@gmail.com.</p>
+
+        <h3><a href="#">Fermer</a></h3>
     </div>
 </div>
 
-</main >
-<footer id="page_down">
-
-    <h4>Echo : Espace de communication pour harmoniser l'organisation</h4>
-    <a href="#cookie">Cookies</a>
-    <a href="">Contact</a>
-    <a href="">Aide</a>
-
-</footer>
-</body>
 </html>
