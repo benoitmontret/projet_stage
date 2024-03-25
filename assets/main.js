@@ -2,17 +2,8 @@ var userLogin = document.querySelector('#userLogin');
 var grpList = document.querySelector("#groupListe");
 
 changeUserGroup();
-window.addEventListener('resize', () => {
-    // Mettre à jour la largeur et la hauteur de l'écran
-    const largeurEcran = window.innerWidth;
-    console.log(largeurEcran);
-    if (largeurEcran<950) {
-        grpList.size=0;
-    } else {
-        grpList.size=30;
-    }
-    console.log(grpList.size);
-});
+sizeList( window.innerWidth);
+
 
 function maj() {
     changeUserGroup();
@@ -40,10 +31,10 @@ function getCookie(cookieName) {
 }
 
 
-function sizeList() {
-    const largeurEcran = window.innerWidth;
-        console.log(largeurEcran);
-        if (largeurEcran<950) {
+function sizeList(witdh) {
+    // const largeurEcran = window.innerWidth;
+        console.log(witdh);
+        if (witdh<950) {
             grpList.size=0;
         } else {
             grpList.size=30;

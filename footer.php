@@ -5,9 +5,8 @@
     <h4>Echo : Espace de communication pour harmoniser l'organisation</h4>
     <a href="">Cookies</a>
     <a href="">Contact</a>
-    <a href=""></a>
-    <?php
-?>
+    <a href="">Aide</a>
+
 </footer>
 </body>
 </html>
