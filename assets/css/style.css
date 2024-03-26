@@ -23,11 +23,17 @@ header {
     border-bottom: solid 2px black;
 }
 footer {
+    display: grid;
+    grid-template-columns: 1fr 60% 1fr;
     margin-top: auto;
     background-color: black;
-    color: white;
-    padding: 8px;
+    color: #bbb;
+    padding: 1em;
     /* height: 100px; */
+}
+footer a {
+    text-decoration: none;
+    color: #;
 }
 h2, h3{
     text-align: center;
@@ -325,8 +331,8 @@ fieldset {
     top : 2%;
 }
 .modal_close img{
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.3rem;
+    height: auto;
 
 }
 
