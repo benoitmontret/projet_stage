@@ -98,10 +98,10 @@ echo "</div><br>";
         <fieldset> <!-- encadrement -->
         <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de facon invisible -->
         <label class="item_menu" for="comm">Commentaire* :</label><br>
-        <textarea name="comm" id="comm" cols="100" rows="3" placeholder="Laissez votre commentaire ici"  required = "required"></textarea>
+        <textarea name="comm" id="comm" rows="3" placeholder="Laissez votre commentaire ici"  required = "required"></textarea>
         <br><br>
         <label for="auteur_comm">Votre nom* :</label> 
-        <input class="item_menu" type="text" name="auteur_comm" id="auteur_comm" size="50"
+        <input class="item_menu" type="text" name="auteur_comm" id="auteur_comm"
         maxlength="255" minlength="2" placeholder="Votre nom ou un pseudo" required = "required"
         <?php
             if (isset($user)) {

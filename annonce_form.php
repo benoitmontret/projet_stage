@@ -45,21 +45,20 @@ $req->execute();
         <textarea name="libelle" id="libelle"  rows="4" placeholder="Entrez les détails de l'annonce ici"></textarea>
         <br><br>
         <div class="form_date">
-
             <div>
                 <label for="date_start">Début * :</label>
                 <input class="item_menu" type="date" name="date_start" id="date_start" required = "required"/>
+                <p class="mandatory">* Champs obligatoires</p>
             </div>
             <div>
                 <label for="date_end">Fin :</label>
                 <input class="item_menu" type="date" name="date_end" id="date_end" />
-                <div class="context_fin">
-                    <p>Attention : La date de fin correspond aussi à la fin de l'affichage sur la page principale.</p>
-                    <p> Et si elle n'est pas définit, elle sera fixée à la même date que celle du début.</p>
-                </div>
+            </div>
+            <div class="context_fin">
+                <p>Attention : La date de fin correspond aussi à la fin de l'affichage sur la page principale.</p>
+                <p> Et si elle n'est pas définit, elle sera fixée à la même date que celle du début.</p>
             </div>
         </div>
-        <p class="mandatory">* Champs obligatoires</p>
 
         <div class="center_btn">
             <input class= "button btn_valid" type="submit" value="Envoyer">

@@ -4,19 +4,17 @@
 <footer id="page_down">
 
     <div class="foot_left">
-        <ul>
-            <li><a href="#cookie">Cookies</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        
+            <a href="#cookie">Cookies</a>
+            <a href="#contact">Contact</a>
+        
     </div>
     <div class="foot_center">
         <pour>Echo : Espace de communication pour harmoniser l'organisation</p>
         <p>Mars 2024</p>
     </div>
     <div class="foot_right">
-        <ul>
-            <li><a href="">Aide</a></li>
-        </ul>
+        <a href="">Aide</a>
     </div>
 
 </footer>
