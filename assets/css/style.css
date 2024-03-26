@@ -20,20 +20,20 @@ header {
     top: 0px;
     height: 180px;
     background-color: #ccc;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px #000;
 }
 footer {
     display: grid;
     grid-template-columns: 1fr 60% 1fr;
     margin-top: auto;
-    background-color: black;
+    background-color: #000;
     color: #bbb;
     font-size: 18px;
     padding: 1em;
     /* height: 100px; */
 }
 footer ul{
-    
+
 }
 footer a {
     text-decoration: none;
@@ -58,7 +58,7 @@ h2, h3{
 }
 .page_down img, .page_up img {
     width: 2rem;
-    background-color: white;
+    background-color: #fff;
 }
 .page_up {
     top: 182px;
@@ -114,18 +114,18 @@ h2, h3{
 }
 .user_login {
     font-weight: bold;
-    background-color: white;
+    background-color: #fff;
 }
 .log_mes {
     text-align: center;
     font-size: 0.9rem;
     height: calc(100vh - 500px);
-    color: green;
+    color: #080;
     font-weight: bold;
 }
 .log_err {
     text-align: center;
-    color: red;
+    color: #f00;
     font-weight: bold;
 }
 
@@ -137,15 +137,15 @@ h2, h3{
     border: 0px;
     border-radius: 25px;
     padding: 10px 1em;
-    background-color: #0000ff;
+    background-color: #00f;
     color: white;
     transition: background-color 0.2s ease-in-out;
 }
 .button:hover {
-    background-color: #0000aa;
+    background-color: #00a;
 }
 .btn_valid {
-    background-color: #008000;
+    background-color: #080;
     /* text-align: center; */
 }
 .center_btn {
@@ -153,7 +153,7 @@ h2, h3{
     justify-content: space-around;
 }
 .btn_valid:hover {
-    background-color: #005000;
+    background-color: #050;
 }
 
 /* affichage principal */
@@ -303,7 +303,7 @@ fieldset {
 .succes {
     text-align: center;
     font-size: 0.9rem;
-    color: green;
+    color: #080;
     font-weight: bold;
 }
 
@@ -327,7 +327,7 @@ fieldset {
 .modal_content {
     overflow-y: scroll;
     position: relative;
-    background-color: white;
+    background-color: #fff;
     padding: 1.5em 2em;
     max-width: 90%;
     max-height: 90%;
