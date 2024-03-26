@@ -3,10 +3,22 @@
 </main >
 <footer id="page_down">
 
-    <h4>Echo : Espace de communication pour harmoniser l'organisation</h4>
-    <a href="#cookie">Cookies</a>
-    <a href="#contact">Contact</a>
-    <a href="">Aide</a>
+    <div class="foot_left">
+        <ul>
+            <li><a href="#cookie">Cookies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="foot_center">
+        <pour>Echo : Espace de communication pour harmoniser l'organisation</p>
+        <p>Mars 2024</p>
+    </div>
+    <div class="foot_right">
+        <ul>
+            <li><a href="">Aide</a></li>
+        </ul>
+    </div>
+
 </footer>
 </body>
 
