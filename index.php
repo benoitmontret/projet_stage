@@ -15,7 +15,12 @@ if (!empty($_POST['groupListe'])) {
 }
 
 include("header.php");
+
+
 ?>
+<head>
+<script src="./assets/resize_select.js" defer></script>
+</head>
 
 <div class="page_up">
     <a href="#page_down">

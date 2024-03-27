@@ -2,8 +2,6 @@ var userLogin = document.querySelector('#userLogin');
 var grpList = document.querySelector("#groupListe");
 
 changeUserGroup();
-sizeList( window.innerWidth);
-
 
 function maj() {
     changeUserGroup();
@@ -29,12 +27,3 @@ function getCookie(cookieName) {
     }
     return null;
 }
-
-
-function sizeList(witdh) {
-        if (witdh<950) {
-            grpList.size=0;
-        } else {
-            grpList.size=30;
-        }
-};

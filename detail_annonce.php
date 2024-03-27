@@ -33,13 +33,6 @@ include("header.php");
 <?php
     include("login_option.php");
 
-
-
-// refresh auto Pose un pb avec le formulaire qui s'efface
-// $delai = 10; 
-// $url = 'detail_annonce.php?id='.$_GET['id'];
-// header("Refresh: $delai;url=$url");
-
 $now=time();
 $id=$_GET['id'];
 $sql = "SELECT titre, libelle, groupe, date_debut, date_fin, auteur FROM annonce where id_annonce=?";

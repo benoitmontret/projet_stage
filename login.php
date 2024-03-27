@@ -4,6 +4,7 @@ $err_message= null;
 $prev_page = $_COOKIE['prev'];
 include ("db.php");
 
+// reset des cookies user quand on utilise le bouton "deconnexion"
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['user']);
     setcookie('user', '', time()-10);
@@ -27,6 +28,7 @@ if (!empty($_POST['nom'])) {
         setcookie('user', $res[0], 0); //  deco avec la fermeture du navigateur 
         setcookie('user_id',$res[1], 0); //si necessaire stock l'id
         $user=$res[0];
+        
     }
 }
 include("header.php");
