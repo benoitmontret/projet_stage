@@ -56,20 +56,21 @@ h2, h3{
 }
 
 /* fleche haut bas */
-.page_up {
-    position: fixed;
-    top: 142px;
-    right: 0;
-}
-.page_down {
+.page_down, .page_up {
     display: flex;
     justify-content: end;
     position: sticky;
-    margin-top: auto;
 }
-.page_up img , .page_down img {
+.page_down img, .page_up img {
     width: 2rem;
     background-color: #fff;
+}
+.page_up {
+    top: 142px;
+}
+.page_down {
+    /* bottom: 0px; */
+    margin-top: auto;
 }
 
 /* banniere et logo */

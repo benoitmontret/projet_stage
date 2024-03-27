@@ -4,7 +4,7 @@ $err_message= null;
 $prev_page = $_COOKIE['prev'];
 include ("db.php");
 
-// reset des cookies user quand on utilise le bouton "deconnexion"
+// reset des 'cookies user' quand on utilise le bouton "deconnexion"
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['user']);
     setcookie('user', '', time()-10);
@@ -12,9 +12,14 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     setcookie('user_id', '', time()-10);
 
 }
+// si déjà connecté les 'cookies user' existe donc recupere leur valeur dans des variable php 
 if (!empty($_COOKIE['user'])) {
     $user = $_COOKIE['user'];
+    $user_id = $_COOKIE['user_id'];
+
+
 }
+// si la methode POST est appelé, verification et si ok cretaion des 'cookies user'
 if (!empty($_POST['nom'])) {
     $res = explode('|', $_POST['nom']); //$res[0] contient le nom+prenom, res[1] l'id bénévol
     $sql = "SELECT dt_nais FROM benevoles WHERE id_bnv=?";
@@ -28,7 +33,8 @@ if (!empty($_POST['nom'])) {
         setcookie('user', $res[0], 0); //  deco avec la fermeture du navigateur 
         setcookie('user_id',$res[1], 0); //si necessaire stock l'id
         $user=$res[0];
-        
+        $user_id=$res[1];
+
     }
 }
 include("header.php");
@@ -37,15 +43,16 @@ if ($err_message) {
     echo $err_message;
 }
 
+// si $user existe, donc quelq'un est connecté => affiche som nom et un bouton de deconnexion
 if ($user): ?>
 <div class="log_status">
     <p class="user_login"><?= htmlentities($user) ?></p>
     <a class="button" href="logout.php?action=deconnecter">Se déconnecter</a>
     <p class="log_mes"> Vous êtes connecté(e) !</p>
-
 </div>
 
 <?php else: 
+// sinon on affiche le formulaire de connexion
     $sql = "SELECT id_bnv, nom, pnom FROM benevoles ORDER BY nom";
     $req = $db->prepare($sql);
     $req->execute();

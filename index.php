@@ -15,12 +15,7 @@ if (!empty($_POST['groupListe'])) {
 }
 
 include("header.php");
-
-
 ?>
-<head>
-<script src="./assets/resize_select.js" defer></script>
-</head>
 
 <div class="page_up">
     <a href="#page_down">
@@ -30,7 +25,6 @@ include("header.php");
 
 <?php
 include("login_option.php");
-
 
 // refresh auto
 $delai = 60*5; 
@@ -119,6 +113,8 @@ $req->execute();
     </a>
 </div>
 
+<script src="./assets/resize_select.js" defer></script>
 <?php
 include("footer.php");
 ?>
+
