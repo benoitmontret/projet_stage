@@ -24,7 +24,7 @@ if (!empty($_POST['nom'])) {
     if ($resultat[0]!=$_POST['dt_nais']) {
         $err_message = '<p class="log_err">Erreur : Le nom et la date de naissance ne correspondent pas !!!</p>';
     } else {
-        setcookie('user', $res[0], 0); // si l'on veut une deco avec la fermeture du navigateur il faut le set à 0
+        setcookie('user', $res[0], 0); //  deco avec la fermeture du navigateur 
         setcookie('user_id',$res[1], 0); //si necessaire stock l'id
         $user=$res[0];
     }

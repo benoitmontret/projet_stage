@@ -1,5 +1,4 @@
 * {
-  /* box-shadow: 0 0 0 1px #ff0000 inset; */
 box-sizing: border-box;
 scroll-behavior: smooth;
 }
@@ -16,7 +15,6 @@ body {
 }
 header {
     position: sticky;
-    margin-bottom: auto;
     top: 0px;
     height: 180px;
     background-color: #ccc;
@@ -67,8 +65,7 @@ h2, h3{
     background-color: #fff;
 }
 .page_up {
-    top: 182px;
-    /* margin-bottom: auto; */
+    top: 142px;
 }
 .page_down {
     /* bottom: 0px; */
@@ -99,7 +96,6 @@ h2, h3{
     padding: 0.5em;
 }
 .userGroup {
-    /* width: 30%; */
     min-width: 250px;
     max-width: 400px;
     text-align: end;
@@ -107,7 +103,7 @@ h2, h3{
 .banner {
     display: flex;
     justify-content: space-between;
-    margin: 1rem;
+    margin: .5em 1em 0;
 }
 
 /* page connexion */
@@ -152,7 +148,6 @@ h2, h3{
 }
 .btn_valid {
     background-color: #080;
-    /* text-align: center; */
 }
 .center_btn {
     display: flex;

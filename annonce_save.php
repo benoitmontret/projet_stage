@@ -1,5 +1,4 @@
 <?php
-// $prev_page = $_COOKIE['prev'];
 include("header.php");
 include("login_option.php");
 

@@ -1,6 +1,4 @@
 <?php
-    // $prev_page = "index.php";
-
 include("header.php");
 
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
@@ -20,7 +18,6 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
         <a class="button" href="login.php">Se Connecter</a><br>
         <p class="log_mes">Vous êtes déconnecté(e) !</p>
         <?php endif;?>
-
 </div>
 
 <?php

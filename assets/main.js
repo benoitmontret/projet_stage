@@ -32,8 +32,6 @@ function getCookie(cookieName) {
 
 
 function sizeList(witdh) {
-    // const largeurEcran = window.innerWidth;
-        console.log(witdh);
         if (witdh<950) {
             grpList.size=0;
         } else {
