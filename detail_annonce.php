@@ -57,6 +57,24 @@ echo '<div class="annonce detail '.$resultat["groupe"].'">';
         echo '<p class="annonce_date">Du : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Au : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'</p>';
         echo '<p class = "annonce_auteur">'.$resultat["auteur"].'</p>';
     echo '</div>';
+
+    // si utilisateur connecté, test si il référent pour afficher le bouton supprimer
+    if ($user) {
+        $userGroup = $_COOKIE['userGroup'];
+        $user_id = $_COOKIE['user_id'];
+        $sql = "SELECT id_referent FROM domaines WHERE lib_dom=?";
+        $req = $db->prepare($sql);
+        $req -> bindvalue(1,$userGroup,PDO::PARAM_STR);
+        $req ->execute();
+        $res = $req->fetch();
+    
+        if ($user_id == $res['id_referent']) {
+            echo '<div class="center_btn">';
+                echo '<a class="button btn_warning" href="delete.php?id='.$id.'">Supprimer</a>';
+            echo '</div>';
+        }
+    }
+
         $sql2="SELECT comm, auteur_comm, date_post FROM comm_annonce WHERE id_annonce=? ORDER BY id_comm ASC";
         $req = $db->prepare($sql2);
         $req->bindvalue(1, $id, PDO::PARAM_INT);
@@ -114,7 +132,7 @@ echo "</div><br>";
     
 <?php
 echo '<div class="center_btn">';
-    echo '<a class="button" href="index.php">Retour</a>';
+    echo '<a class="button" href="index.php">Retour  à la page d\'accueil</a>';
 echo '</div>';
 ?>
 

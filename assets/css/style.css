@@ -15,9 +15,9 @@ body {
 }
 header {
     position: sticky;
-    margin-bottom: auto;
     top: 0px;
-    height: 180px;
+    /* margin-bottom: auto; */
+    /* height: 180px; */
     background-color: #ccc;
     border-bottom: solid 2px #000;
 }

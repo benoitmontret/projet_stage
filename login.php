@@ -38,7 +38,7 @@ if (!empty($_POST['nom'])) {
     }
 }
 include("header.php");
-
+echo "<br>";
 if ($err_message) {
     echo $err_message;
 }
