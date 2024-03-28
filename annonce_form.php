@@ -16,6 +16,7 @@ include ("db.php");
 $sql = "SELECT lib_dom FROM domaines WHERE lib_dom != 'Pour tous' ORDER BY lib_dom ASC";
 $req = $db->prepare($sql);
 $req->execute();
+$now=time()
 ?>
 <div class="formulaire">
 
@@ -46,7 +47,7 @@ $req->execute();
         <div class="form_date">
             <div>
                 <label for="date_start">Début * :</label>
-                <input class="item_menu" type="date" name="date_start" id="date_start" required = "required"/>
+                <input class="item_menu" type="date" name="date_start" id="date_start" required = "required" />
                 <p class="mandatory">* Champs obligatoires</p>
             </div>
             <div>

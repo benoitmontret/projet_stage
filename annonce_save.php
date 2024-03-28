@@ -46,13 +46,17 @@ $sql='INSERT INTO annonce (titre,libelle,groupe,date_debut,date_fin,auteur) valu
                     echo '<p class="annonce_date">Du : ' . date("d/m/Y",strtotime($resultat["date_debut"])) . ' Au : ' . date("d/m/Y",strtotime($resultat["date_fin"])).'</p>';
                     echo '<p class = "annonce_auteur">'.$resultat["auteur"].'</p>';
                 echo '</div>';
-            echo '</div>';
 
+                echo '<div class="center_btn">';
+                    echo '<a class="button btn_warning" href="delete.php?id='.$id.'">Supprimer</a>';
+                echo '</div>';
+
+            echo '</div>';
     } else {
         echo '<p class="log_err">Échec</p>';
     }
 
-?>
+?>//
 <?php
 echo '<div class="center_btn">';
     echo '<a class="button" href="index.php">Retour</a>';

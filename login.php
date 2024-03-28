@@ -47,7 +47,7 @@ if ($err_message) {
 if ($user): ?>
 <div class="log_status">
     <p class="user_login"><?= htmlentities($user) ?></p>
-    <a class="button" href="logout.php?action=deconnecter">Se déconnecter</a>
+    <a class="button btn_warning" href="logout.php?action=deconnecter">Se déconnecter</a>
     <p class="log_mes"> Vous êtes connecté(e) !</p>
 </div>
 

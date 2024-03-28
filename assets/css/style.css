@@ -149,12 +149,18 @@ h2, h3{
 .btn_valid {
     background-color: #080;
 }
+.btn_valid:hover {
+    background-color: #050;
+}
 .center_btn {
     display: flex;
     justify-content: space-around;
 }
-.btn_valid:hover {
-    background-color: #050;
+.btn_warning {
+    background-color: #e00;
+}
+.btn_warning:hover {
+    background-color: #c00;
 }
 
 /* affichage principal */
