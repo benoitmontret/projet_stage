@@ -89,7 +89,7 @@ if ($user): ?>
 
 <?php
 echo '<div class="center_btn">';
-    echo '<a class="button" href="'.$prev_page.'">Retour</a>';
+    echo '<a class="button" href="'.$prev_page.'">Retour page précédente</a>';
 echo '</div>';
 include("footer.php");
 ?>
