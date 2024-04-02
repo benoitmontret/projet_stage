@@ -2,7 +2,7 @@ Echo Espace de communication pour harmoniser l'organisation
 
 
 attention a ne pas tout copié sur le NAS
-verifiez les nom de fichier, par ex db.php ne doit pas être ecrasé sur le NAS
+vérifiez les nom de fichier, par ex db.php ne doit pas être écrasé sur le NAS
 
 ajouter "Pour tous" comme groupe possible dans la table domaine
 

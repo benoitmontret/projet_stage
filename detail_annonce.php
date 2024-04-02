@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql2="UPDATE annonce SET nb_comm = nb_comm +1 WHERE id_annonce = $id_annonce";
     $req2=$db->prepare($sql2);
     $req2->execute();
-    // On recharge la page sans le POST pour eviter le renvoie des donnée si on raffraichi la page plutard
+    // On recharge la page sans le POST pour éviter le renvoie des donnée si on rafraîchi la page plus tard
     $url = 'detail_annonce.php?id='.$_GET['id'];
     header("Refresh: 0 ;url=$url");
 }
@@ -107,7 +107,7 @@ echo "</div><br>";
 
     <form  name="formulaire_annonce" id="formulaire_annonce" method="POST" action="">
         <fieldset> <!-- encadrement -->
-        <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de facon invisible -->
+        <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de façon invisible -->
         <label class="item_menu" for="comm">Commentaire* :</label><br>
         <textarea name="comm" id="comm" rows="3" placeholder="Laissez votre commentaire ici"  required = "required"></textarea>
         <br><br>

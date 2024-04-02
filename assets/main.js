@@ -9,7 +9,7 @@ function maj() {
 
 }
 function changeUserGroup() {
-    //les espaces et accent sont transformés dans le cookie, decodeURIcomponent permet de retrouver quelchose de lisible
+    //les espaces et accent sont transformés dans le cookie, decodeURIcomponent permet de retrouver quelque chose de lisible
     var nomFr = decodeURIComponent(getCookie('userGroup'));
     document.querySelector('#userGroup').innerText = nomFr;
 }

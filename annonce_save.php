@@ -21,7 +21,7 @@ $sql='INSERT INTO annonce (titre,libelle,groupe,date_debut,date_fin,auteur) valu
 
     if ($req->execute()) {
 
-        echo "<p class='succes'>Annonce ajoutée avec succès !</p>";
+        echo "<p class='success'>Annonce ajoutée avec succès !</p>";
         $id = $db->lastInsertId();
         $sql = "SELECT titre, libelle, groupe, date_debut, date_fin, auteur FROM annonce WHERE id_annonce=?";
         $req = $db->prepare($sql);

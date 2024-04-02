@@ -1,14 +1,14 @@
 <?php
 $userGroup = null;
 setcookie('prev','index.php');
-//s'il existe un cookie on definit le groupe avec, sinon on le fixe à "Pour tous"
+//s'il existe un cookie on défini le groupe avec, sinon on le fixe à "Pour tous"
 if (!empty($_COOKIE['userGroup'])) {
     $userGroup = $_COOKIE['userGroup'];
 } else {
     $userGroup='Pour tous';
     setcookie('userGroup', 'Pour tous', time()+3600*24*365*10); /* 3600*24*365*10 >> expiration 10ans*/
 }
-//s'il y a eut un changement detecter grace à la methode POST on definit le cookie
+//s'il y a eut un changement detecter grace à la méthode POST on défini le cookie
 if (!empty($_POST['groupListe'])) {
     setcookie('userGroup', $_POST['groupListe'], time()+3600*24*365*10); /* 3600*24*365*10 >> expiration 10ans*/
     $userGroup = $_POST['groupListe'];

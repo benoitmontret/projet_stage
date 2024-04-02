@@ -17,7 +17,7 @@ if (($_SERVER["REQUEST_METHOD"] === "POST") AND (strtolower($_POST['suppr']) ===
         $req->execute(); 
         echo "<p class='log_err'>Annonce supprimée</p>";
 
-    // On recharge la page sans le POST pour eviter le renvoie des donnée si on raffraichi la page plutard
+    // On recharge la page sans le POST pour éviter le renvoie des donnée si on rafraîchi la page plus tard
     // $url = 'delete.php?id='.$_GET['id'];
     // header("Refresh: 0 ;url=$url");
 } else {
@@ -54,9 +54,9 @@ if (($_SERVER["REQUEST_METHOD"] === "POST") AND (strtolower($_POST['suppr']) ===
     
             <form  name="supprimer" id="supprimer" method="POST" action="">
                 <fieldset> <!-- encadrement -->
-                <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de facon invisible -->
+                <input type="hidden" name="id_annonce" value="<?php echo $id ?>">  <!-- Ajout de l'id reference de façon invisible -->
                 <label class="item_menu" for="suppr">Voulez vous vraiment effacer cette annonce ?</label><br>
-                <label class="item_menu">Tapez "oui" en toutes lettres pour comfirmer votre choix !</label><br>
+                <label class="item_menu">Tapez "oui" en toutes lettres pour confirmer votre choix !</label><br>
                 <input class="item_menu" type="text" name="suppr" id="suppr" maxlength="3">
         
                 <div class="center_btn">

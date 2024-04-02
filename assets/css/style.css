@@ -72,7 +72,7 @@ h2, h3{
     background-color: #fff;
 }
 
-/* banniere et logo */
+/* bannière et logo */
 .logo_home {
     width: 100px;
     flex: none;
@@ -311,7 +311,7 @@ fieldset {
 .commentaire .date_auteur {
     color: #888;
 }
-.succes {
+.success {
     text-align: center;
     font-size: 0.9rem;
     color: #080;

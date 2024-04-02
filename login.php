@@ -4,7 +4,7 @@ $err_message= null;
 $prev_page = $_COOKIE['prev'];
 include ("db.php");
 
-// reset des 'cookies user' quand on utilise le bouton "deconnexion"
+// reset des 'cookies user' quand on utilise le bouton "déconnexion"
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['user']);
     setcookie('user', '', time()-10);
@@ -12,16 +12,16 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     setcookie('user_id', '', time()-10);
 
 }
-// si déjà connecté les 'cookies user' existe donc recupere leur valeur dans des variable php 
+// si déjà connecté les 'cookies user' existe donc récupère leur valeur dans des variable php 
 if (!empty($_COOKIE['user'])) {
     $user = $_COOKIE['user'];
     $user_id = $_COOKIE['user_id'];
 
 
 }
-// si la methode POST est appelé, verification et si ok cretaion des 'cookies user'
+// si la méthode POST est appelé, verification et si ok création des 'cookies user'
 if (!empty($_POST['nom'])) {
-    $res = explode('|', $_POST['nom']); //$res[0] contient le nom+prenom, res[1] l'id bénévol
+    $res = explode('|', $_POST['nom']); //$res[0] contient le nom+prénom, res[1] l'id bénévole
     $sql = "SELECT dt_nais FROM benevoles WHERE id_bnv=?";
         $req = $db->prepare($sql);
         $req -> bindvalue(1,$res[1],PDO::PARAM_INT);
@@ -31,7 +31,7 @@ if (!empty($_POST['nom'])) {
         $err_message = '<p class="log_err">Erreur : Le nom et la date de naissance ne correspondent pas !!!</p>';
     } else {
         setcookie('user', $res[0], 0); //  deco avec la fermeture du navigateur 
-        setcookie('user_id',$res[1], 0); //si necessaire stock l'id
+        setcookie('user_id',$res[1], 0); //si nécessaire stock l'id
         $user=$res[0];
         $user_id=$res[1];
 
@@ -43,7 +43,7 @@ if ($err_message) {
     echo $err_message;
 }
 
-// si $user existe, donc quelq'un est connecté => affiche som nom et un bouton de deconnexion
+// si $user existe, donc quelqu’un est connecté => affiche som nom et un bouton de déconnexion
 if ($user): ?>
 <div class="log_status">
     <p class="user_login"><?= htmlentities($user) ?></p>
@@ -65,7 +65,7 @@ if ($user): ?>
                     <div>
                         <label class="item_menu" for="nom">Nom</label><br>
                         <select class="item_menu log_nom" name="nom" required>
-                            <option selected disabled>Selectionnez votre nom</option>
+                            <option selected disabled>Sélectionnez votre nom</option>
                             <?php while ($row = $req->fetch()) { ?>
                                 <option value="<?php echo $row['nom']." ".$row["pnom"]."|".$row["id_bnv"]; ?>" 
                                 ><?php echo $row['nom']." ".$row["pnom"]; ?>

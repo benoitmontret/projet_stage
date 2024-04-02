@@ -22,7 +22,7 @@
             </div>
             <div class="title_header">
                 <img class="logo-echo" src="./assets/img/echo.png" alt="echo">
-                <p class="title-echo">Espace de Communication pour l'Harmonisation de l'Oraganisation</p> 
+                <p class="title-echo">Espace de Communication pour l'Harmonisation de l’Organisation</p> 
                 <p class="title-echo">Secours Populaire Français Le Havre</p>
             </div>
             <h2 class="userGroup" id="userGroup">GROUP</h2>
