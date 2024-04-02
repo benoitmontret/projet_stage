@@ -6,4 +6,4 @@ vérifiez les nom de fichier, par ex db.php ne doit pas être écrasé sur le NA
 
 ajouter "Pour tous" comme groupe possible dans la table domaine
 
-le dossier ne sert à rien, ce ne sont que des éléments de travail, ils seront effacés au final 
+le dossier WIP ne sert à rien, ce ne sont que des éléments de travail, ils seront effacés au final 
