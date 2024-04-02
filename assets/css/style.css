@@ -247,7 +247,7 @@ fieldset {
 .annonce {
     border: 4px solid #008000;
     border-radius: 50px;
-    padding: 1em;
+    padding: 0.2em 1em 0.4em;
     margin-bottom: 1rem;
 
 }
@@ -291,7 +291,7 @@ fieldset {
 }
 .btn_plus {
     display: flex;
-    justify-content: end;
+    justify-content:space-between;
 }
 /* affichage 1 annonce et commentaire */
 .detail {
