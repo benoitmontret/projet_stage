@@ -13,7 +13,7 @@
         <p>Mars 2024</p>
     </div>
     <div class="foot_right">
-        <a href="">Aide</a>
+        <a href="user_manual.html" target="_blank">Manuel utilisateur</a>
     </div>
 
 </footer>
