@@ -22,7 +22,7 @@ if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
 
 <?php
 echo '<div class="center_btn">';
-echo '<a class="button" href="index.php">Retour  à la page d\'accueil</a>';
+echo '<a class="button" href="index.php">Retour à la page d\'accueil</a>';
 echo '</div>';
 include("footer.php");
 ?>
