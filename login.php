@@ -4,14 +4,15 @@ $err_message= null;
 $prev_page = $_COOKIE['prev'];
 include ("db.php");
 
+// code obsolete, le logout se faisant sur logout.php
 // reset des 'cookies user' quand on utilise le bouton "déconnexion"
-if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
-    unset($_COOKIE['user']);
-    setcookie('user', '', time()-10);
-    unset($_COOKIE['user_id']);
-    setcookie('user_id', '', time()-10);
+// if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
+//     unset($_COOKIE['user']);
+//     setcookie('user', '', time()-10);
+//     unset($_COOKIE['user_id']);
+//     setcookie('user_id', '', time()-10);
+// }
 
-}
 // si déjà connecté les 'cookies user' existe donc récupère leur valeur dans des variable php 
 if (!empty($_COOKIE['user'])) {
     $user = $_COOKIE['user'];
