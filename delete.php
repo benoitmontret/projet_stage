@@ -17,9 +17,6 @@ if (($_SERVER["REQUEST_METHOD"] === "POST") AND (strtolower($_POST['suppr']) ===
         $req->execute(); 
         echo "<p class='log_err'>Annonce supprimée</p>";
 
-    // On recharge la page sans le POST pour éviter le renvoie des donnée si on rafraîchi la page plus tard
-    // $url = 'delete.php?id='.$_GET['id'];
-    // header("Refresh: 0 ;url=$url");
 } else {
 
 
