@@ -4,6 +4,8 @@ include("header.php");
 if (!empty($_GET['action']) && $_GET['action'] === 'deconnecter') {
     unset($_COOKIE['user']);
     setcookie('user', '', time()-10);
+    unset($_COOKIE['user_id']);
+    setcookie('user_id', '', time()-10);
     $user = null;
 } else {
     $user=$_COOKIE['user'];
