@@ -6,16 +6,20 @@ include("header.php");
 include("login_option.php");
 if (($_SERVER["REQUEST_METHOD"] === "POST") AND (strtolower($_POST['suppr']) === "oui")) {
     $id_annonce=$_POST["id_annonce"];
+    
+    // et on efface tous les commentaires lié
+    $sql='DELETE from comm_annonce WHERE id_annonce=?';
+    $req=$db->prepare($sql);
+    $req->bindvalue(1,$id_annonce,PDO::PARAM_INT);
+    $req->execute();
+
+    // puis l'annonce elle même
     $sql='DELETE from annonce WHERE id_annonce=?';
     $req=$db->prepare($sql);
     $req->bindvalue(1,$id_annonce,PDO::PARAM_INT);
     $req->execute(); 
-        // et on efface tous les commentaires lié
-        $sql='DELETE from comm_annonce WHERE id_annonce=?';
-        $req=$db->prepare($sql);
-        $req->bindvalue(1,$id_annonce,PDO::PARAM_INT);
-        $req->execute(); 
-        echo "<p class='log_err'>Annonce supprimée</p>";
+
+    echo "<p class='log_err'>Annonce supprimée</p>";
 
 } else {
 
