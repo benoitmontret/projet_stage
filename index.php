@@ -59,9 +59,9 @@ $req->execute();
         <?php
         //récupération des annonces
         $now=date("Y-m-d"); //date du jour au format dans la table pour pouvoir comparer
-        $sql = "SELECT id_annonce, titre, libelle, groupe, date_debut, date_fin, date_modif, auteur, nb_comm FROM annonce WHERE (date_fin >= ? && (groupe='Pour tous' || groupe=?))ORDER BY date_fin ASC ";
-        // pour trié par annonce ou commentaire les plus resent 
-        // $sql = "SELECT id_annonce, titre, libelle, groupe, date_debut, date_fin, date_modif, auteur, nb_comm FROM annonce WHERE (date_fin >= ? && (groupe='Pour tous' || groupe=?))ORDER BY date_modif DESC ";
+        // pour changer l'ordre de tri inverser les ligne commenté et non commenté juste en dessous commentaire / message les plus resent  OU annonce à venir en 1er
+        // $sql = "SELECT id_annonce, titre, libelle, groupe, date_debut, date_fin, date_modif, auteur, nb_comm FROM annonce WHERE (date_fin >= ? && (groupe='Pour tous' || groupe=?))ORDER BY date_fin ASC ";
+        $sql = "SELECT id_annonce, titre, libelle, groupe, date_debut, date_fin, date_modif, auteur, nb_comm FROM annonce WHERE (date_fin >= ? && (groupe='Pour tous' || groupe=?))ORDER BY date_modif DESC ";
         $req = $db->prepare($sql);
         $req->bindvalue(1, $now, PDO::PARAM_STR);
         $req->bindvalue(2, $userGroup, PDO::PARAM_STR);
